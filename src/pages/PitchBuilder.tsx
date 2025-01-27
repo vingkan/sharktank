@@ -11,7 +11,7 @@ import {
   Progress,
   Badge,
 } from "@radix-ui/themes";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import type { Company } from "../data/types";
 import { COMPANIES } from "../data/companies";
 import { SECTIONS } from "../data/sections";
@@ -20,19 +20,106 @@ type Step = "select" | "build" | "review";
 type Choices = Record<string, string[]>;
 
 export default function PitchBuilder() {
-  const [selectedCompany, setSelectedCompany] = useState<Company | null>(null);
-  const [currentStep, setCurrentStep] = useState<Step>("select");
-  const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
-  const [choices, setChoices] = useState<Choices>({});
-  const [isPresentationMode, setIsPresentationMode] = useState(false);
-  const [currentLineIndex, setCurrentLineIndex] = useState(0);
-  const [selectedQAIndex, setSelectedQAIndex] = useState<number | null>(null);
+  // Load initial state from localStorage
+  const [selectedCompany, setSelectedCompany] = useState<Company | null>(() => {
+    const saved = localStorage.getItem("selectedCompany");
+    return saved ? JSON.parse(saved) : null;
+  });
+  const [currentStep, setCurrentStep] = useState<Step>(() => {
+    const saved = localStorage.getItem("currentStep");
+    return (saved as Step) || "select";
+  });
+  const [currentSectionIndex, setCurrentSectionIndex] = useState(() => {
+    const saved = localStorage.getItem("currentSectionIndex");
+    return saved ? parseInt(saved) : 0;
+  });
+  const [choices, setChoices] = useState<Choices>(() => {
+    const saved = localStorage.getItem("choices");
+    return saved ? JSON.parse(saved) : {};
+  });
+  const [isPresentationMode, setIsPresentationMode] = useState(() => {
+    const saved = localStorage.getItem("isPresentationMode");
+    return saved ? JSON.parse(saved) : false;
+  });
+  const [currentLineIndex, setCurrentLineIndex] = useState(() => {
+    const saved = localStorage.getItem("currentLineIndex");
+    return saved ? parseInt(saved) : 0;
+  });
+  const [selectedQAIndex, setSelectedQAIndex] = useState<number | null>(() => {
+    const saved = localStorage.getItem("selectedQAIndex");
+    return saved ? parseInt(saved) : null;
+  });
+
+  // Update localStorage when state changes
+  useEffect(() => {
+    if (selectedCompany) {
+      localStorage.setItem("selectedCompany", JSON.stringify(selectedCompany));
+    } else {
+      localStorage.removeItem("selectedCompany");
+    }
+  }, [selectedCompany]);
+
+  useEffect(() => {
+    if (currentStep) {
+      localStorage.setItem("currentStep", currentStep);
+    }
+  }, [currentStep]);
+
+  useEffect(() => {
+    localStorage.setItem("currentSectionIndex", currentSectionIndex.toString());
+  }, [currentSectionIndex]);
+
+  useEffect(() => {
+    if (Object.keys(choices).length > 0) {
+      localStorage.setItem("choices", JSON.stringify(choices));
+    } else {
+      localStorage.removeItem("choices");
+    }
+  }, [choices]);
+
+  useEffect(() => {
+    localStorage.setItem(
+      "isPresentationMode",
+      JSON.stringify(isPresentationMode)
+    );
+  }, [isPresentationMode]);
+
+  useEffect(() => {
+    localStorage.setItem("currentLineIndex", currentLineIndex.toString());
+  }, [currentLineIndex]);
+
+  useEffect(() => {
+    if (selectedQAIndex !== null) {
+      localStorage.setItem("selectedQAIndex", selectedQAIndex.toString());
+    } else {
+      localStorage.removeItem("selectedQAIndex");
+    }
+  }, [selectedQAIndex]);
 
   const handleSelectCompany = (company: Company) => {
     setSelectedCompany(company);
     setCurrentStep("build");
     setChoices({});
     setCurrentSectionIndex(0);
+  };
+
+  const clearStoredData = () => {
+    localStorage.removeItem("selectedCompany");
+    localStorage.removeItem("currentStep");
+    localStorage.removeItem("currentSectionIndex");
+    localStorage.removeItem("choices");
+    localStorage.removeItem("isPresentationMode");
+    localStorage.removeItem("currentLineIndex");
+    localStorage.removeItem("selectedQAIndex");
+  };
+
+  // Update the start over functionality to clear localStorage
+  const handleStartOver = () => {
+    setCurrentStep("select");
+    setSelectedCompany(null);
+    setChoices({});
+    setCurrentSectionIndex(0);
+    clearStoredData();
   };
 
   const handleOptionSelect = (sectionName: string, value: string) => {
@@ -60,6 +147,15 @@ export default function PitchBuilder() {
       setSelectedCompany(null);
       setChoices({});
     }
+  };
+
+  const exitPresentationMode = () => {
+    setIsPresentationMode(false);
+    setCurrentLineIndex(0);
+    setSelectedQAIndex(null);
+    localStorage.removeItem("isPresentationMode");
+    localStorage.removeItem("currentLineIndex");
+    localStorage.removeItem("selectedQAIndex");
   };
 
   if (currentStep === "select") {
@@ -316,20 +412,8 @@ export default function PitchBuilder() {
                 >
                   Back
                 </Button>
-                <Button
-                  size="4"
-                  onClick={() => {
-                    setIsPresentationMode(false);
-                    setCurrentLineIndex(0);
-                    setSelectedQAIndex(null);
-                    setTimeout(() => {
-                      document.getElementById("qa-section")?.scrollIntoView({
-                        behavior: "smooth",
-                      });
-                    }, 100);
-                  }}
-                >
-                  Exit
+                <Button size="4" onClick={exitPresentationMode}>
+                  Exit Presentation
                 </Button>
               </Flex>
             </Flex>
@@ -363,9 +447,7 @@ export default function PitchBuilder() {
                 variant="soft"
                 onClick={() => {
                   if (currentLineIndex === 0) {
-                    setIsPresentationMode(false);
-                    setCurrentLineIndex(0);
-                    setSelectedQAIndex(null);
+                    exitPresentationMode();
                   } else {
                     setCurrentLineIndex((prev) => prev - 1);
                   }
@@ -399,11 +481,7 @@ export default function PitchBuilder() {
             variant="ghost"
             size="3"
             color="red"
-            onClick={() => {
-              setCurrentStep("select");
-              setSelectedCompany(null);
-              setChoices({});
-            }}
+            onClick={handleStartOver}
           >
             Start Over
           </Button>
