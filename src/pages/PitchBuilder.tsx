@@ -583,15 +583,24 @@ export default function PitchBuilder() {
 
   return (
     <Box>
-      <Text size="5">We could not find what you were looking for.</Text>
-      <Button
-        onClick={() => {
-          localStorage.clear();
-          window.location.reload();
-        }}
-      >
-        Start Over
-      </Button>
+      <Heading size="8" my="4" align="center">
+        Whoops!
+      </Heading>
+      <Text as="p" size="5" color="gray" my="4" align="center">
+        Something went wrong. Please try again.
+      </Text>
+      <Flex justify="center">
+        <Button
+          size="4"
+          my="4"
+          onClick={() => {
+            localStorage.clear();
+            window.location.reload();
+          }}
+        >
+          Start Over
+        </Button>
+      </Flex>
     </Box>
   );
 }
