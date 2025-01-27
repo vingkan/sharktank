@@ -24,6 +24,9 @@ export default function PitchBuilder() {
   const [currentStep, setCurrentStep] = useState<Step>("select");
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
   const [choices, setChoices] = useState<Choices>({});
+  const [isPresentationMode, setIsPresentationMode] = useState(false);
+  const [currentLineIndex, setCurrentLineIndex] = useState(0);
+  const [selectedQAIndex, setSelectedQAIndex] = useState<number | null>(null);
 
   const handleSelectCompany = (company: Company) => {
     setSelectedCompany(company);
@@ -211,6 +214,168 @@ export default function PitchBuilder() {
 
     const fullPitch = buildFullPitch();
 
+    if (isPresentationMode) {
+      // Show Q&A answer
+      if (selectedQAIndex !== null) {
+        const qa = selectedCompany.questionsAndAnswers[selectedQAIndex];
+
+        return (
+          <Box
+            style={{
+              height: "calc(100vh - 2rem)",
+              boxSizing: "border-box",
+              padding: "2rem",
+            }}
+          >
+            <Flex
+              direction="column"
+              justify="between"
+              style={{ height: "100%" }}
+            >
+              <Text
+                size="6"
+                style={{
+                  color: "gray",
+                  marginBottom: "2rem",
+                }}
+              >
+                {qa.question}
+              </Text>
+
+              <Text
+                size="8"
+                style={{
+                  lineHeight: "1.4",
+                  margin: "auto",
+                }}
+              >
+                {qa.answer}
+              </Text>
+
+              <Flex gap="4" py="8" justify="between">
+                <Button
+                  size="4"
+                  variant="soft"
+                  onClick={() => setSelectedQAIndex(null)}
+                >
+                  Back
+                </Button>
+              </Flex>
+            </Flex>
+          </Box>
+        );
+      }
+
+      // Show Q&A cards if we've finished the pitch
+      if (currentLineIndex >= fullPitch.length) {
+        return (
+          <Box
+            style={{
+              height: "calc(100vh - 2rem)",
+              boxSizing: "border-box",
+              padding: "2rem",
+            }}
+          >
+            <Flex direction="column" justify="between">
+              <Heading size="8" mb="4" align="center">
+                Q&A
+              </Heading>
+
+              <Flex
+                direction="column"
+                gap="4"
+                mt="4"
+                style={{ flex: 1, overflowY: "auto" }}
+              >
+                {selectedCompany.questionsAndAnswers.map((qa, index) => (
+                  <Card
+                    key={index}
+                    size="3"
+                    style={{ cursor: "pointer" }}
+                    onClick={() => setSelectedQAIndex(index)}
+                  >
+                    <Text size="6">{qa.question}</Text>
+                  </Card>
+                ))}
+              </Flex>
+
+              <Flex gap="4" justify="between" py="8">
+                <Button
+                  size="4"
+                  variant="soft"
+                  onClick={() => setCurrentLineIndex(fullPitch.length - 1)}
+                >
+                  Back
+                </Button>
+                <Button
+                  size="4"
+                  onClick={() => {
+                    setIsPresentationMode(false);
+                    setCurrentLineIndex(0);
+                    setSelectedQAIndex(null);
+                    setTimeout(() => {
+                      document.getElementById("qa-section")?.scrollIntoView({
+                        behavior: "smooth",
+                      });
+                    }, 100);
+                  }}
+                >
+                  Exit
+                </Button>
+              </Flex>
+            </Flex>
+          </Box>
+        );
+      }
+
+      // Show pitch lines
+      return (
+        <Box
+          style={{
+            height: "calc(100vh - 2rem)",
+            boxSizing: "border-box",
+            padding: "2rem",
+          }}
+        >
+          <Flex direction="column" justify="between" style={{ height: "100%" }}>
+            <Text
+              size="8"
+              style={{
+                lineHeight: "1.4",
+                margin: "auto",
+              }}
+            >
+              {fullPitch[currentLineIndex]}
+            </Text>
+
+            <Flex gap="4" py="8" justify="between">
+              <Button
+                size="4"
+                variant="soft"
+                onClick={() => {
+                  if (currentLineIndex === 0) {
+                    setIsPresentationMode(false);
+                    setCurrentLineIndex(0);
+                    setSelectedQAIndex(null);
+                  } else {
+                    setCurrentLineIndex((prev) => prev - 1);
+                  }
+                }}
+              >
+                Back
+              </Button>
+              <Button
+                size="4"
+                onClick={() => setCurrentLineIndex((prev) => prev + 1)}
+              >
+                Next
+              </Button>
+            </Flex>
+          </Flex>
+        </Box>
+      );
+    }
+
     return (
       <Box>
         <Flex justify="between" align="center" mb="4">
@@ -239,9 +404,19 @@ export default function PitchBuilder() {
           {selectedCompany.company.name}
         </Heading>
 
-        <Heading size="7" mb="4">
-          Pitch
-        </Heading>
+        <Flex justify="between" mb="4" align="center">
+          <Heading size="7">Pitch</Heading>
+          <Button
+            size="4"
+            variant="soft"
+            onClick={() => {
+              setIsPresentationMode(true);
+              setCurrentLineIndex(0);
+            }}
+          >
+            Present
+          </Button>
+        </Flex>
         <Box mb="6">
           {fullPitch.map((paragraph, index) => (
             <Text as="p" size="5" mb="4" key={index}>

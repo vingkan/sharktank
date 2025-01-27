@@ -174,7 +174,7 @@ export const COMPANIES: Company[] = [
         answer: "It costs us $2 per can and we sell it for $4 per can.",
       },
       {
-        question: "Question: How many units have you sold?",
+        question: "How many units have you sold?",
         answer:
           "We sold 37,500 cans in our first year and we are projecting to quadruple that this year.",
       },
