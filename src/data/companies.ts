@@ -327,15 +327,15 @@ export const COMPANIES: Company[] = [
         options: [
           {
             name: "Diversify themes and difficulty levels",
-            text: "We want to create new storylines and higher difficulty levels to cater to a broader range of players.",
+            text: "With your investment, we will be able to create new storylines and higher difficulty levels to cater to a broader range of players.",
           },
           {
             name: "Scale production",
-            text: "We'll use the investment to scale production, improve kit quality, and ensure we can meet growing demand.",
+            text: "We will use the investment to scale production, improve kit quality, and ensure we can meet growing demand.",
           },
           {
             name: "Expand marketing efforts",
-            text: "We plan to invest in targeted marketing campaigns to reach new audiences and expand our online presence.",
+            text: "We plan to invest this funding in targeted marketing campaigns to reach new audiences and expand our online presence.",
           },
         ],
       },
@@ -515,7 +515,7 @@ export const COMPANIES: Company[] = [
         options: [
           {
             name: "Scale production",
-            text: "We plan to invest in increasing production capacity to meet growing demand and develop kits for niche markets like weddings and corporate events.",
+            text: "We plan to invest this funding in increasing production capacity to meet growing demand and develop kits for niche markets like weddings and corporate events.",
           },
           {
             name: "Expand marketing",
@@ -693,7 +693,7 @@ export const COMPANIES: Company[] = [
           },
           {
             name: "Grow driver and business network",
-            text: "We'll invest in marketing to onboard more drivers and businesses, expanding our presence in major cities.",
+            text: "With your invesment, we will  increase marketing to onboard more drivers and businesses, expanding our presence in major cities.",
           },
         ],
       },
@@ -1067,7 +1067,7 @@ export const COMPANIES: Company[] = [
           },
           {
             name: "Build inventory and partnerships",
-            text: "We'll invest in expanding our product categories and forging more partnerships with high-end brands.",
+            text: "With your help, we'll invest in expanding our product categories and forging more partnerships with high-end brands.",
           },
         ],
       },
@@ -1250,7 +1250,7 @@ export const COMPANIES: Company[] = [
           },
           {
             name: "Expand marketing",
-            text: "We'll use funds to launch targeted marketing campaigns aimed at urban professionals and interior designers.",
+            text: "We'll use your funds to launch targeted marketing campaigns aimed at urban professionals and interior designers.",
           },
         ],
       },
