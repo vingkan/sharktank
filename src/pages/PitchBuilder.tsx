@@ -318,6 +318,16 @@ export default function PitchBuilder() {
             {currentSectionIndex === SECTIONS.length - 1 ? "Review" : "Next"}
           </Button>
         </Flex>
+        <Flex justify="center" my="8">
+          <Button
+            size="4"
+            variant="ghost"
+            color="red"
+            onClick={handleStartOver}
+          >
+            Start Over
+          </Button>
+        </Flex>
       </Box>
     );
   }
@@ -451,7 +461,7 @@ export default function PitchBuilder() {
                 ))}
               </Flex>
 
-              <Flex gap="4" justify="between" py="8">
+              <Flex gap="4" justify="between" align="center" py="8">
                 <Button
                   size="4"
                   variant="soft"
@@ -459,8 +469,13 @@ export default function PitchBuilder() {
                 >
                   Back
                 </Button>
-                <Button size="4" onClick={exitPresentationMode}>
-                  Exit Presentation
+                <Button
+                  size="4"
+                  variant="soft"
+                  color="red"
+                  onClick={exitPresentationMode}
+                >
+                  Exit
                 </Button>
               </Flex>
             </Flex>
@@ -478,6 +493,24 @@ export default function PitchBuilder() {
           }}
         >
           <Flex direction="column" justify="between" style={{ height: "100%" }}>
+            <Flex justify="between" align="center" gap="4" pb="6">
+              <Button
+                size="4"
+                variant="ghost"
+                onClick={() => setCurrentLineIndex(fullPitch.length)}
+              >
+                Q&A
+              </Button>
+              <Button
+                size="4"
+                variant="ghost"
+                color="red"
+                onClick={exitPresentationMode}
+              >
+                Exit
+              </Button>
+            </Flex>
+
             <Text
               size="8"
               style={{

@@ -549,7 +549,7 @@ export const COMPANIES: Company[] = [
           "We've worked with music festivals, marathons, and local fairs, and we're looking to expand into corporate events and weddings.",
       },
       {
-        question: "Why would event organizers buy this",
+        question: "Why would event organizers buy this?",
         answer:
           "Many outdoor venues provided limited waste disposal options and event organizers have to hire a dedicated team or waste disposal company. With TidyPlanet, you estimate the number of attendees, buy kits based on that, and then you have a simple solution to waste management.",
       },
