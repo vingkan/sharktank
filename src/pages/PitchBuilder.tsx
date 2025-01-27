@@ -65,10 +65,15 @@ export default function PitchBuilder() {
   if (currentStep === "select") {
     return (
       <Box>
-        <Heading size="8" mb="4">
-          Choose Your Company
-        </Heading>
-        <Grid columns={{ initial: "1", sm: "2", md: "3" }} gap="4">
+        <Flex justify="start" align="center" gap="4" mb="4">
+          <img src="./sharktank/icon.png" alt="logo" width={64} height={64} />
+          <Heading size="8">Pitch Creator</Heading>
+        </Flex>
+        <Text size="5" my="4" color="gray">
+          Choose a company and we will walk you through creating your Shark Tank
+          pitch!
+        </Text>
+        <Grid my="4" columns={{ initial: "1", sm: "2", md: "3" }} gap="4">
           {COMPANIES.map((company, index) => (
             <Card
               key={index}
@@ -120,8 +125,8 @@ export default function PitchBuilder() {
           {currentSection.description}
         </Text>
 
-        {currentSection.type === "pickOne" ? (
-          <Flex direction="column" gap="3">
+        {currentSection.type === "pickOne" && (
+          <Flex direction="column" gap="3" my="4">
             <RadioCards.Root
               size="3"
               columns="1"
@@ -139,7 +144,8 @@ export default function PitchBuilder() {
               ))}
             </RadioCards.Root>
           </Flex>
-        ) : (
+        )}
+        {currentSection.type === "pickTwo" && (
           <CheckboxCards.Root
             size="3"
             value={currentChoices}
@@ -169,10 +175,13 @@ export default function PitchBuilder() {
           </CheckboxCards.Root>
         )}
 
-        <Flex justify="between" mt="4">
+        <Flex justify="between" mt="4" align="center">
           <Button size="4" variant="outline" onClick={handleBack}>
             Back
           </Button>
+          <Text size="5" color="gray">
+            {currentSection.type === "pickOne" ? "Choose one" : "Choose two"}
+          </Text>
           <Button size="4" disabled={!canProgress} onClick={handleNext}>
             {currentSectionIndex === SECTIONS.length - 1 ? "Review" : "Next"}
           </Button>
