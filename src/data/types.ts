@@ -59,3 +59,27 @@ export interface Company {
   };
   questionsAndAnswers: QAndA[];
 }
+
+export type PerspectiveType =
+  | "brand"
+  | "market"
+  | "revenue"
+  | "cashflow"
+  | "founder"
+  | "idea";
+
+export type SharkPerspective = {
+  type: PerspectiveType;
+  investor: string;
+  text: string;
+  image: string;
+};
+
+export type InvestorBio = {
+  key: [PerspectiveType, PerspectiveType, PerspectiveType];
+  background: string;
+  favorites: string;
+  valueAdds: string;
+  turnOffs: string;
+  questions: string[];
+};

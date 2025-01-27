@@ -21,14 +21,17 @@ export default function Home() {
           </Card>
         </Link>
 
-        <Card size="2" style={{ cursor: "pointer" }}>
-          <Heading size="7" mb="2" color="gray">
-            Investors
-          </Heading>
-          <Text as="p" size="5" color="gray">
-            Coming soon...
-          </Text>
-        </Card>
+        <Link to="/bio" style={{ textDecoration: "none", color: "black" }}>
+          <Card size="2" style={{ cursor: "pointer" }}>
+            <Heading size="7" mb="2">
+              Investors
+            </Heading>
+            <Text as="p" size="5">
+              Choose your Shark influences and discover your investor
+              personality.
+            </Text>
+          </Card>
+        </Link>
       </Flex>
     </Box>
   );

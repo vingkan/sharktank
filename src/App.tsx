@@ -1,9 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BASENAME, useStaticRedirect } from "./utils/redirect";
 import { Layout } from "./components/Layout";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
-import { BASENAME, useStaticRedirect } from "./utils/redirect";
 import PitchBuilder from "./pages/PitchBuilder";
+import BioBuilder from "./pages/BioBuilder";
 
 function AppPage() {
   useStaticRedirect();
@@ -12,6 +13,7 @@ function AppPage() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/pitch" element={<PitchBuilder />} />
+      <Route path="/bio" element={<BioBuilder />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
