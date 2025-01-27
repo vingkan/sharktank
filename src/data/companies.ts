@@ -23,7 +23,7 @@ export const COMPANIES: Company[] = [
         options: [
           {
             name: "Open with a question",
-            text: "Hello Sharks. What if your drink could do more than just quench your thirst? That’s what Moodswell is all about.",
+            text: "Hello Sharks. What if your drink could do more than just quench your thirst? That's what Moodswell is all about.",
           },
           {
             name: "Call out your competitor",
@@ -40,7 +40,7 @@ export const COMPANIES: Company[] = [
           },
           {
             name: "Former corporate employee",
-            text: "I worked as a stressed-out employee in the corporate restaurant management industry for ten years, but now I am using my master’s degree in nutrition to create something that will help people manage their stress in a natural and delicious way.",
+            text: "I worked as a stressed-out employee in the corporate restaurant management industry for ten years, but now I am using my master's degree in nutrition to create something that will help people manage their stress in a natural and delicious way.",
           },
         ],
       },
@@ -70,7 +70,7 @@ export const COMPANIES: Company[] = [
           },
           {
             name: "Highlight specific adaptogens used",
-            text: "We use all-natural adaptogens in our drinks. For relaxation, ashwagandha; for energy, rhodiola; for focus, lion’s mane.",
+            text: "We use all-natural adaptogens in our drinks. For relaxation, ashwagandha; for energy, rhodiola; for focus, lion's mane.",
           },
         ],
       },
@@ -150,7 +150,7 @@ export const COMPANIES: Company[] = [
           },
           {
             name: "New marketing campaign",
-            text: "We are seeking your investment to launch a new marketing campaign that will position us as the breakout drink of the summer. We will sign health and wellness influencers, place samples of our drinks at concerts and events, and target people who drink our competitors’ products on social media.",
+            text: "We are seeking your investment to launch a new marketing campaign that will position us as the breakout drink of the summer. We will sign health and wellness influencers, place samples of our drinks at concerts and events, and target people who drink our competitors' products on social media.",
           },
         ],
       },
@@ -188,19 +188,19 @@ export const COMPANIES: Company[] = [
   },
   {
     company: {
-      name: "Escape Room in a Box",
+      name: "Boxed Escape",
       industry: "Entertainment",
       oneSentence:
-        "Escape Room in a Box brings the thrill of escape rooms to your home with immersive, story-driven DIY kits.",
+        "Boxed Escape offers DIY kits to bring the magic of an escape room into your living room.",
       ask: "We are seeking $300,000 for 15% of our company.",
-      revenue: "We did $200,000 in sales in our first year.",
+      revenue: "We did $250,000 in sales in our first year.",
     },
     unitEconomics: {
       unitOfSales: "kits",
       costPerUnitCents: 1000,
-      pricePerUnitCents: 4000,
+      pricePerUnitCents: 5000,
       unitsSold: 5000,
-      yearOneSalesCents: 20000000,
+      yearOneSalesCents: 25000000,
     },
     pitchSections: {
       hook: {
@@ -208,7 +208,7 @@ export const COMPANIES: Company[] = [
         options: [
           {
             name: "Excitement of escape rooms at home",
-            text: "Imagine bringing the excitement of an escape room right to your living room. Escape Room in a Box makes it possible.",
+            text: "Imagine bringing the excitement of an escape room right to your living room. Boxed Escape Room makes it possible.",
           },
           {
             name: "Affordable fun alternative",
@@ -221,7 +221,7 @@ export const COMPANIES: Company[] = [
         options: [
           {
             name: "Lifelong puzzle lover",
-            text: "I’ve always loved puzzles and immersive storytelling. When I saw how expensive and logistically tricky escape rooms could be, I decided to create a solution that was affordable and easy to enjoy at home.",
+            text: "I've always loved puzzles and immersive storytelling. When I saw how expensive and logistically tricky escape rooms could be, I decided to create a solution that was affordable and easy to enjoy at home.",
           },
           {
             name: "Game designer turned entrepreneur",
@@ -247,15 +247,15 @@ export const COMPANIES: Company[] = [
         options: [
           {
             name: "Showcase physical kit",
-            text: "Here is one of our kits. You’ll see it includes lockable boxes, secret codes, and beautifully designed props that immerse players in the story.",
+            text: "Here is one of our kits. You'll see it includes lockable boxes, secret codes, and beautifully designed props that immerse players in the story.",
           },
           {
             name: "Sample puzzle demonstration",
-            text: "Let me show you a simple puzzle from one of our kits. This riddle leads to a hidden compartment, giving you a taste of the thrill.",
+            text: "Let me show you a simple puzzle from one of our kits. In our museum heist kit, we send you a painting to hang up on your wall. Later on, you realize that the eyes in the painting are moving and always helping point you towards the next clue.",
           },
           {
             name: "Highlight themes and variety",
-            text: "We offer themes like spy missions, haunted mansions, and treasure hunts—each with multiple difficulty levels to suit any group.",
+            text: "We offer themes like spy missions, haunted mansions, and treasure hunts, each with multiple difficulty levels to suit any group.",
           },
         ],
       },
@@ -268,7 +268,7 @@ export const COMPANIES: Company[] = [
           },
           {
             name: "Eco-friendly materials",
-            text: "Our kits are made with eco-friendly packaging and reusable components, appealing to environmentally conscious consumers.",
+            text: "Our kits are made with eco-friendly packaging and reusable components, appealing to environmentally-conscious consumers.",
           },
           {
             name: "Local assembly",
@@ -280,20 +280,24 @@ export const COMPANIES: Company[] = [
         section: "distribution",
         options: [
           {
-            name: "E-commerce platforms",
-            text: "We sell through our website and Amazon, offering convenient online purchases with shipping options.",
+            name: "Online platforms",
+            text: "We sell through our website and Amazon, making it easy for customers to discover and purchase our kits with convenient shipping options.",
           },
           {
-            name: "Retail partnerships",
-            text: "We’ve partnered with toy stores, bookstores, and big-box retailers to reach a wider audience.",
+            name: "Toy stores and bookstores",
+            text: "Our kits are available in specialty toy stores and bookstores, where customers can see and feel the quality of our products firsthand.",
           },
           {
-            name: "Subscription model",
-            text: "We’re introducing a subscription model where customers receive new themed kits monthly or quarterly.",
+            name: "Dedicated online form for corporate sales",
+            text: "We've streamlined corporate sales with a dedicated online form, making it easy for businesses to order customized kits for team-building events.",
           },
           {
-            name: "Corporate sales",
-            text: "Corporate clients use our kits for team-building, with customization options available for unique branding.",
+            name: "In talks to close a big box retail store",
+            text: "We are in final negotiations with a major big box retailer to stock our kits nationwide, which would significantly expand our reach.",
+          },
+          {
+            name: "Party planning company partnership",
+            text: "We recently partnered with a party planning company that features our kits as an entertainment option for their events, opening up a new sales channel.",
           },
         ],
       },
@@ -301,20 +305,20 @@ export const COMPANIES: Company[] = [
         section: "traction",
         options: [
           {
+            name: "Sucessfully increased prices",
+            text: "We successfully increased our price from $35 to $50 per kit due to strong demand and positive customer feedback, maintaining our sales velocity.",
+          },
+          {
             name: "Positive customer reviews",
-            text: "We’ve received glowing reviews for ease of setup, immersive quality, and the replayability of our kits.",
+            text: "Our kits consistently receive 4.8-star reviews online, with customers specifically praising the ease of setup, high-quality puzzles, and ability to replay with different groups.",
           },
           {
-            name: "Growing online sales",
-            text: "Our online sales have grown steadily, driven by repeat customers and word-of-mouth recommendations.",
+            name: "At-home entertainment trend",
+            text: "We're capitalizing on the growing trend of at-home entertainment, with our monthly sales increasing 40% as more people seek engaging activities they can enjoy from home.",
           },
           {
-            name: "Featured by influencers",
-            text: "Influencers in the gaming and family entertainment space have showcased our kits, driving brand awareness and sales.",
-          },
-          {
-            name: "Strong holiday sales",
-            text: "The holiday season has been especially successful, with kits being a popular gift for families and friends.",
+            name: "Social media success",
+            text: "Our partnerships with social media influencers have generated over 2 million views and directly contributed to a 60% increase in website traffic.",
           },
         ],
       },
@@ -327,7 +331,7 @@ export const COMPANIES: Company[] = [
           },
           {
             name: "Scale production",
-            text: "We’ll use the investment to scale production, improve kit quality, and ensure we can meet growing demand.",
+            text: "We'll use the investment to scale production, improve kit quality, and ensure we can meet growing demand.",
           },
           {
             name: "Expand marketing efforts",
@@ -339,12 +343,12 @@ export const COMPANIES: Company[] = [
         section: "closing",
         options: [
           {
-            name: "Unlock the fun",
-            text: "Sharks, are you ready to unlock the fun and bring escape rooms to homes everywhere?",
+            name: "Escape velocity",
+            text: "Sharks, are you ready to help us reach escape velocity?",
           },
           {
-            name: "The thrill is yours",
-            text: "Join us in making Escape Room in a Box the ultimate at-home adventure experience!",
+            name: "Join us",
+            text: "Join us in making Boxed Escape the ultimate at-home adventure experience!",
           },
         ],
       },
@@ -353,7 +357,7 @@ export const COMPANIES: Company[] = [
       {
         question: "How much does it cost you and how much do you sell it for?",
         answer:
-          "It costs us $10 to produce each kit, and we sell them for $40 each.",
+          "It costs us $10 to produce each kit, and we sell them for $50 each.",
       },
       {
         question: "How many units have you sold?",
@@ -362,7 +366,7 @@ export const COMPANIES: Company[] = [
       },
       {
         question:
-          "What’s your plan for competing with other at-home entertainment options?",
+          "What's your plan for competing with other at-home entertainment options?",
         answer:
           "Our kits offer something unique: immersive, story-driven experiences that engage players on a deeper level than board games or VR. Our variety of themes and difficulty levels also set us apart.",
       },
@@ -376,13 +380,12 @@ export const COMPANIES: Company[] = [
   },
   {
     company: {
-      name: "EcoEvent Solutions",
-      industry: "Sustainability and Events",
+      name: "TidyPlanet",
+      industry: "Environment and Waste Management",
       oneSentence:
-        "EcoEvent Solutions offers pre-packaged waste management kits to simplify cleanup and reduce waste at outdoor events.",
+        "TidyPlanet offers pre-packaged waste management kits to simplify cleanup and reduce waste at outdoor events.",
       ask: "We are seeking $200,000 for 20% of our company.",
-      revenue:
-        "$75,000 in initial sales from pilot programs and direct orders.",
+      revenue: "We did $75,000 in sales in our first year.",
     },
     unitEconomics: {
       unitOfSales: "waste management kits",
@@ -396,11 +399,11 @@ export const COMPANIES: Company[] = [
         section: "hook",
         options: [
           {
-            name: "Event waste chaos to order",
-            text: "Outdoor events are fun, but the waste they generate is anything but. We’ve created a pre-packaged waste management kit to turn chaos into order—helping event organizers, attendees, and the planet all at once!",
+            name: "Help event organizers and the planet",
+            text: "Outdoor events are fun, but the waste they generate is anything but. We've created a pre-packaged waste management kit to turn chaos into order; helping event organizers, attendees, and the planet all at once!",
           },
           {
-            name: "Simplify cleanup",
+            name: "Picture mountains of trash",
             text: "Picture festivals, marathons, or concerts leaving behind mountains of trash. Our kits simplify cleanup and reduce landfill waste, one event at a time.",
           },
         ],
@@ -414,7 +417,7 @@ export const COMPANIES: Company[] = [
           },
           {
             name: "Event volunteer turned entrepreneur",
-            text: "After volunteering to clean up several events, I realized the issue wasn’t lack of effort—it was lack of tools. That’s why I created EcoEvent Solutions.",
+            text: "After volunteering to clean up several events, I realized the issue wasn't lack of effort, it was lack of tools. That's why I created TidyPlanet.",
           },
         ],
       },
@@ -440,7 +443,7 @@ export const COMPANIES: Company[] = [
           },
           {
             name: "Before-and-after visuals",
-            text: "Here’s a before-and-after comparison of a festival that used our kits versus one that didn’t. The difference is night and day.",
+            text: "Here's a before-and-after comparison of a festival that used our kits versus one that didn't. The difference is night and day.",
           },
           {
             name: "Set-up demonstration",
@@ -495,11 +498,11 @@ export const COMPANIES: Company[] = [
           },
           {
             name: "Revenue growth",
-            text: "We’ve generated $75,000 in sales through pilot programs and direct orders in our first year.",
+            text: "We've generated $75,000 in sales through pilot programs and direct orders in our first year.",
           },
           {
             name: "Partnerships secured",
-            text: "We’ve partnered with two event-planning companies and a waste management firm to streamline post-event disposal.",
+            text: "We've partnered with two event-planning companies and a waste management firm to streamline post-event disposal.",
           },
           {
             name: "Positive feedback",
@@ -524,8 +527,8 @@ export const COMPANIES: Company[] = [
         section: "closing",
         options: [
           {
-            name: "Cleaner events, greener future",
-            text: "Sharks, let’s make every event cleaner and greener together with EcoEvent Solutions.",
+            name: "Cleaner and greener",
+            text: "Sharks, let's make every event cleaner and greener together with TidyPlanet.",
           },
           {
             name: "The waste management revolution",
@@ -543,15 +546,15 @@ export const COMPANIES: Company[] = [
       {
         question: "What kind of events have you worked with so far?",
         answer:
-          "We’ve worked with music festivals, marathons, and local fairs, and we’re looking to expand into corporate events and weddings.",
+          "We've worked with music festivals, marathons, and local fairs, and we're looking to expand into corporate events and weddings.",
       },
       {
-        question: "How do you ensure attendee participation?",
+        question: "Why would event organizers buy this",
         answer:
-          "Our kits include clear signage and simple instructions, making it easy for attendees to know where and how to dispose of waste.",
+          "Many outdoor venues provided limited waste disposal options and event organizers have to hire a dedicated team or waste disposal company. With TidyPlanet, you estimate the number of attendees, buy kits based on that, and then you have a simple solution to waste management.",
       },
       {
-        question: "What’s your plan for scaling?",
+        question: "What's your plan for scaling?",
         answer:
           "We plan to partner with more event planners and waste management firms while increasing production capacity to handle larger order volumes.",
       },
@@ -559,20 +562,19 @@ export const COMPANIES: Company[] = [
   },
   {
     company: {
-      name: "DriveAds",
+      name: "Motion Ads",
       industry: "Advertising and Technology",
       oneSentence:
-        "DriveAds transforms cars into moving billboards, enabling drivers to earn passive income and businesses to reach hyper-local audiences.",
+        "Motion Ads transforms cars into moving billboards, enabling drivers to earn passive income and businesses to reach hyper-local audiences.",
       ask: "We are seeking $500,000 for 12% of our company.",
-      revenue:
-        "$270/month per driver in ad and lease revenue based on updated impressions and pricing assumptions.",
+      revenue: "We generated $1.2 million in revenue in our first year.",
     },
     unitEconomics: {
-      unitOfSales: "digital display units",
-      costPerUnitCents: 20000,
-      pricePerUnitCents: 50000,
+      unitOfSales: "one driver per year",
+      costPerUnitCents: 240000,
+      pricePerUnitCents: 324000,
       unitsSold: 400,
-      yearOneSalesCents: 270000000,
+      yearOneSalesCents: 129600000,
     },
     pitchSections: {
       hook: {
@@ -580,11 +582,11 @@ export const COMPANIES: Company[] = [
         options: [
           {
             name: "Earn while you drive",
-            text: "Imagine your car making money for you while you drive, just by displaying digital ads. DriveAds makes it possible.",
+            text: "What if you could earn while you drive? Motion Ads transforms your daily commute into a passive earning opportunity with a digital billboard for your car.",
           },
           {
             name: "Turn cars into billboards",
-            text: "What if your daily commute could earn you passive income? DriveAds transforms vehicles into moving billboards for businesses.",
+            text: "Trying to reach customers who are always on the move? Motion Ads transforms vehicles into moving billboards for businesses.",
           },
         ],
       },
@@ -593,11 +595,11 @@ export const COMPANIES: Company[] = [
         options: [
           {
             name: "Rideshare driver inspiration",
-            text: "As a former rideshare driver, I saw the untapped advertising potential on cars. That’s why I created DriveAds to help drivers earn more while they’re on the road.",
+            text: "As a former rideshare driver, I saw the untapped advertising potential on cars. That's why I created Motion Ads to help drivers earn more while they're on the road.",
           },
           {
             name: "Ad tech entrepreneur",
-            text: "With my background in advertising technology, I knew there was an opportunity to connect businesses and drivers for mutual benefit. DriveAds is the result.",
+            text: "With my background in advertising technology, I knew there was an opportunity to connect businesses and drivers for mutual benefit. Motion Ads is the result.",
           },
         ],
       },
@@ -606,11 +608,11 @@ export const COMPANIES: Company[] = [
         options: [
           {
             name: "Drivers seeking passive income",
-            text: "Our primary customers are drivers—rideshare drivers, delivery workers, and commuters—who want to earn passive income without extra effort.",
+            text: "Our primary customers are drivers, rideshare drivers, delivery workers, and commuters, who want to earn passive income without extra effort.",
           },
           {
             name: "Businesses seeking geo-targeted ads",
-            text: "We also target businesses looking for hyper-local advertising that stands out and delivers measurable ROI.",
+            text: "We target businesses looking for hyper-local advertising that stands out and delivers measurable ROI.",
           },
         ],
       },
@@ -619,7 +621,7 @@ export const COMPANIES: Company[] = [
         options: [
           {
             name: "Sleek digital display",
-            text: "Our sleek, weatherproof digital displays mount easily on a car’s roof or rear window, blending seamlessly with vehicle aesthetics.",
+            text: "Our sleek, weatherproof digital displays mount easily on a car's roof or rear window, blending seamlessly with vehicle aesthetics.",
           },
           {
             name: "Companion app",
@@ -643,8 +645,8 @@ export const COMPANIES: Company[] = [
             text: "Each unit comes pre-assembled with GPS and Wi-Fi modules for seamless integration into our advertising platform.",
           },
           {
-            name: "Quality control",
-            text: "Our displays undergo rigorous testing for durability, weather resistance, and compatibility with various vehicle models.",
+            name: "Lease or own model",
+            text: "Drivers can either lease our units for $20/month or purchase them outright for $720.",
           },
         ],
       },
@@ -657,11 +659,11 @@ export const COMPANIES: Company[] = [
           },
           {
             name: "Partnerships with rideshare companies",
-            text: "We collaborate with rideshare and delivery companies to incentivize their drivers to adopt DriveAds.",
+            text: "We collaborate with rideshare and delivery companies to incentivize their drivers to adopt Motion Ads.",
           },
           {
             name: "Ad agency partnerships",
-            text: "We work with ad agencies to include DriveAds in their media offerings, expanding our reach to more businesses.",
+            text: "We work with ad agencies to include Motion Ads in their media offerings, expanding our reach to more businesses.",
           },
         ],
       },
@@ -670,15 +672,15 @@ export const COMPANIES: Company[] = [
         options: [
           {
             name: "Successful pilot program",
-            text: "Our pilot program with 50 drivers across two cities generated $80,000 in ad sales and showed strong ROI for businesses.",
+            text: "Our three-month pilot program with 50 drivers across two cities generated $40,000 in ad sales and showed strong ROI for businesses, enabling us to expand.",
           },
           {
             name: "Positive driver feedback",
-            text: "70% of drivers from our pilot opted to continue using DriveAds, earning an average of $250/month in ad revenue.",
+            text: "70% of drivers from our pilot opted to continue using Motion Ads, earning an average of $175/month in ad revenue.",
           },
           {
             name: "Business demand growth",
-            text: "We’ve received increasing inquiries from regional businesses interested in hyper-local advertising through DriveAds.",
+            text: "We've received increasing inquiries from regional businesses interested in hyper-local advertising through Motion Ads.",
           },
         ],
       },
@@ -687,11 +689,11 @@ export const COMPANIES: Company[] = [
         options: [
           {
             name: "Scale production",
-            text: "We’ll use investment funds to scale production of display units and improve display technology.",
+            text: "We'll use investment funds to scale production of display units and improve display technology.",
           },
           {
             name: "Grow driver and business network",
-            text: "We’ll invest in marketing to onboard more drivers and businesses, expanding our presence in major cities.",
+            text: "We'll invest in marketing to onboard more drivers and businesses, expanding our presence in major cities.",
           },
         ],
       },
@@ -700,11 +702,11 @@ export const COMPANIES: Company[] = [
         options: [
           {
             name: "Turn drive time into dollar signs",
-            text: "Sharks, help us turn drive time into dollar signs and revolutionize outdoor advertising with DriveAds.",
+            text: "Sharks, invest in Motion Ads and help us turn drive time into dollar signs!",
           },
           {
-            name: "Join the advertising evolution",
-            text: "Join us in transforming cars into moving billboards and creating a win-win for drivers and businesses alike.",
+            name: "Drive to succeed",
+            text: "Motion Ads is growing fast and I have the drive to succeed!",
           },
         ],
       },
@@ -713,17 +715,22 @@ export const COMPANIES: Company[] = [
       {
         question: "How much does it cost you and how much do you sell it for?",
         answer:
-          "Our displays cost $200 to produce, and we sell them for $500 or lease them for $20/month. Drivers earn $250/month in ad revenue.",
+          "The cost to produce each unit is $200, $100 for the LED screen, $50 for the GPS/Wi-Fi module, and $50 for the mount. We make that cost back within 10 months, unless the driver buys the unit, at which point we make back almost four times the cost. We take a 25% cut of the ad revenue, and could make that even higher.",
       },
       {
         question: "How do drivers earn money?",
         answer:
-          "Drivers earn $250/month from ad impressions and retain 70% of that revenue, plus the opportunity to earn more in high-traffic areas.",
+          "On average, drivers earn $175/month in ad revenue. They can use their earnings to buy or lease the unit. And we allow them to cash out at the end of each month.",
       },
       {
-        question: "What’s your plan for scaling?",
+        question: "What's your plan for scaling?",
         answer:
           "We plan to scale by partnering with rideshare companies, expanding driver incentives, and targeting businesses in additional cities.",
+      },
+      {
+        question: "How do you track whether an ad was actually seen?",
+        answer:
+          "We use a combination of GPS and Wi-Fi tracking to ensure ads are shown in targeted locations. We also conservatively discount impressions by a factor of ten to account for the fleeting nature of ads on moving vehicles.",
       },
       {
         question: "How do you ensure ads reach the right audience?",
@@ -737,7 +744,7 @@ export const COMPANIES: Company[] = [
       name: "Adaptive Threads",
       industry: "Apparel",
       oneSentence:
-        "Our adaptive apparel uses magnets and velcro closures to make getting dressed easier and faster for people with disabilities and their caregivers.",
+        "Our adaptive apparel makes getting dressed easier for people with disabilities.",
       ask: "We are seeking $400,000 for 15% of our company.",
       revenue:
         "We sold 5,000 garments in our first year, generating $250,000 in revenue.",
@@ -794,7 +801,7 @@ export const COMPANIES: Company[] = [
         options: [
           {
             name: "Shirt with magnetic closures",
-            text: "Here is one of our most popular designs: a shirt with magnetic closures that looks like traditional buttons. It’s functional, stylish, and easy to use for anyone with limited dexterity.",
+            text: "Here is one of our most popular designs: a shirt with magnetic closures that looks like traditional buttons. It's functional, stylish, and easy to use for anyone with limited dexterity.",
           },
           {
             name: "Pants with velcro side openings",
@@ -844,7 +851,7 @@ export const COMPANIES: Company[] = [
           },
           {
             name: "Media features",
-            text: "We’ve been featured in accessibility-focused blogs and lifestyle publications, building our credibility and raising awareness about our adaptive apparel.",
+            text: "We've been featured in accessibility-focused blogs and lifestyle publications, building our credibility and raising awareness about our adaptive apparel.",
           },
         ],
       },
@@ -895,7 +902,7 @@ export const COMPANIES: Company[] = [
           },
           {
             name: "Empowering people one outfit at a time",
-            text: "Join us, Sharks, and help us empower people with disabilities to live more independently—one outfit at a time. Together, we can make a difference.",
+            text: "Join us, Sharks, and help us empower people with disabilities to live more independently: one outfit at a time. Together, we can make a difference.",
           },
         ],
       },
@@ -909,7 +916,7 @@ export const COMPANIES: Company[] = [
       {
         question: "Who is your biggest competitor?",
         answer:
-          "Our biggest competitors are brands like Tommy Hilfiger’s adaptive clothing line. However, we focus more on affordability and inclusive styles, making our products accessible to a broader audience.",
+          "Our biggest competitors are brands like Tommy Hilfiger's adaptive clothing line. However, we focus more on affordability and inclusive styles, making our products accessible to a broader audience.",
       },
       {
         question: "How are you marketing your product?",
@@ -923,10 +930,10 @@ export const COMPANIES: Company[] = [
       name: "Apology.com",
       industry: "E-commerce",
       oneSentence:
-        'Apology.com makes it easy to say "I\'m sorry" with curated gifts tailored to specific apology situations.',
+        "Apology.com is the only e-commerce site for curated gifts tailored to specific apology situations.",
       ask: "We are seeking $400,000 for 15% of our company.",
       revenue:
-        "We received 10,000 visitors in our first two months with a 12% conversion rate.",
+        "We drove traffic to the tune of over 40,000 sessions, with a 12% conversion rate, leading to $750,000 in sales in our first year.",
     },
     unitEconomics: {
       unitOfSales: "gift packages",
@@ -940,12 +947,12 @@ export const COMPANIES: Company[] = [
         section: "hook",
         options: [
           {
-            name: "Apologies made easy",
-            text: "Apologizing is hard, but shopping for the perfect apology gift shouldn’t be. Apology.com makes it easy to say 'I’m sorry' in the most thoughtful way possible.",
+            name: "Apologizing is hard",
+            text: "Sharks, apologizing is hard, but shopping for the perfect apology gift shouldn't be. Apology.com makes it easy to say 'I'm sorry' in the most thoughtful way possible.",
           },
           {
-            name: "Remorse meets retail",
-            text: "What if shopping for a gift didn’t start with the product but with the reason you’re buying it? Apology.com turns remorse into retail.",
+            name: "Turn remorse into retail",
+            text: "Has your partner, friend, or coworker ever done something wrong to you and apologized only in words? Apology.com turns remorse into retail.",
           },
         ],
       },
@@ -954,7 +961,7 @@ export const COMPANIES: Company[] = [
         options: [
           {
             name: "Inspired by awkward apologies",
-            text: "As someone who has struggled with awkward apologies, I created Apology.com to simplify the process and make it meaningful.",
+            text: "As someone who has witnessed many awkward and downright cringe-worthy apologies, I created Apology.com to simplify the process and make it meaningful.",
           },
           {
             name: "E-commerce meets emotion",
@@ -966,12 +973,12 @@ export const COMPANIES: Company[] = [
         section: "customer",
         options: [
           {
-            name: "Men seeking thoughtful gifts",
-            text: "Our primary audience is men who want convenient, thoughtful ways to apologize to their partners, friends, or colleagues.",
+            name: "People looking to apologize",
+            text: "Our primary audience is people who want convenient, thoughtful ways to apologize to their partners, friends, or colleagues.",
           },
           {
-            name: "Couples and individuals repairing relationships",
-            text: "We also target couples and divorced individuals who are looking for ways to repair strained relationships with thoughtful gestures.",
+            name: "Couples in conflict",
+            text: "We target couples who are looking for ways to repair strained relationships with thoughtful gestures.",
           },
         ],
       },
@@ -987,7 +994,7 @@ export const COMPANIES: Company[] = [
             text: "We feature premium products, including jewelry, spa kits, and custom gifts, tailored to the apology type.",
           },
           {
-            name: "Seamless checkout",
+            name: "Personalization at checkout",
             text: "Our intuitive checkout process includes options for handwritten notes, gift wrapping, and rush shipping.",
           },
         ],
@@ -997,7 +1004,7 @@ export const COMPANIES: Company[] = [
         options: [
           {
             name: "Premium suppliers",
-            text: "We partner with trusted suppliers for high-quality products like flowers, jewelry, and spa kits.",
+            text: "We partner with trusted suppliers for high-quality products like flowers, jewelry, and spa kits, ensuring a luxury experience.",
           },
           {
             name: "Dropshipping for scalability",
@@ -1017,8 +1024,12 @@ export const COMPANIES: Company[] = [
             text: "Our primary sales channel is the Apology.com website, where users can explore curated gift options.",
           },
           {
-            name: "Affiliate partnerships",
-            text: "We collaborate with influencers, bloggers, and relationship coaches to drive targeted traffic to our platform.",
+            name: "Men",
+            text: "All kinds of people shop on Apology.com, but an exciting segment for us is: men! We have almost triple the industry average of men shopping for jewelry because we are the only site positioned for when they do wrong, not just when they want to get married.",
+          },
+          {
+            name: "Divorced couples",
+            text: "We have even re-ignited the market for gift-giving after divorce. For those who regularly interact with their ex, apologizing is a regular part of life and we are there to support them.",
           },
           {
             name: "Corporate gifting",
@@ -1035,7 +1046,7 @@ export const COMPANIES: Company[] = [
           },
           {
             name: "Exclusive luxury brand partnerships",
-            text: "We’ve partnered with luxury jewelry brands to offer exclusive, high-end apology gifts.",
+            text: "We've partnered with luxury jewelry brands to offer exclusive, high-end apology gifts.",
           },
           {
             name: "Positive customer feedback",
@@ -1043,7 +1054,7 @@ export const COMPANIES: Company[] = [
           },
           {
             name: "Featured in relationship blogs",
-            text: "We’ve been featured in top relationship advice blogs as a leading solution for repairing relationships through thoughtful gifting.",
+            text: "We've been featured in top relationship advice blogs as a leading solution for repairing relationships through thoughtful gifting.",
           },
         ],
       },
@@ -1056,7 +1067,7 @@ export const COMPANIES: Company[] = [
           },
           {
             name: "Build inventory and partnerships",
-            text: "We’ll invest in expanding our product categories and forging more partnerships with high-end brands.",
+            text: "We'll invest in expanding our product categories and forging more partnerships with high-end brands.",
           },
         ],
       },
@@ -1064,12 +1075,12 @@ export const COMPANIES: Company[] = [
         section: "closing",
         options: [
           {
-            name: "Simplify apologies",
-            text: "Sharks, let’s simplify the art of apologizing together and help people say 'I’m sorry' with Apology.com.",
+            name: "I'm sorry",
+            text: "Sharks, I'm sorry. Sorry for bringing you the best deal of the night!",
           },
           {
-            name: "Turn remorse into revenue",
-            text: "Join us in turning remorse into revenue and making heartfelt gifting effortless with Apology.com.",
+            name: "Turn remorse into retail",
+            text: "Join us in turning remorse into retail and making heartfelt gifting effortless with Apology.com.",
           },
         ],
       },
@@ -1078,7 +1089,12 @@ export const COMPANIES: Company[] = [
       {
         question: "How much does it cost you and how much do you sell it for?",
         answer:
-          "Our gifts cost $60-$120 to produce, and we sell them for $80-$500 depending on the category and personalization.",
+          "Our luxury gifts cost $60-$120 to produce, and we sell them for $80-$500 depending on the category and personalization.",
+      },
+      {
+        question: "How do you have such a large inventory?",
+        answer:
+          "We don't own most of our inventory, instead we aggregate across our partners.",
       },
       {
         question: "How do you differentiate from competitors?",
@@ -1086,7 +1102,7 @@ export const COMPANIES: Company[] = [
           "We are the first platform to organize gifts by apology type, offering curated, premium products with seamless personalization.",
       },
       {
-        question: "What’s your customer acquisition strategy?",
+        question: "What's your customer acquisition strategy?",
         answer:
           "Our strategy includes viral social media campaigns, partnerships with relationship coaches, and targeted ads aimed at men and couples.",
       },
@@ -1100,30 +1116,30 @@ export const COMPANIES: Company[] = [
   {
     company: {
       name: "Soundscape Panels",
-      industry: "Home Improvement",
+      industry: "Home Furnishings",
       oneSentence:
-        "Soundscape Panels offer stylish, soundproofing wall art to transform noisy spaces into peaceful, beautiful environments.",
+        "Soundscape Panels offer soundproofing panels that double as wall art.",
       ask: "We are seeking $300,000 for 12% of our company.",
-      revenue: "We did $100,000 in sales in our first 8 months.",
+      revenue: "We did $300,000 in sales in our first year.",
     },
     unitEconomics: {
       unitOfSales: "panels",
       costPerUnitCents: 3200,
-      pricePerUnitCents: 12500,
+      pricePerUnitCents: 10000,
       unitsSold: 3000,
-      yearOneSalesCents: 37500000,
+      yearOneSalesCents: 30000000,
     },
     pitchSections: {
       hook: {
         section: "hook",
         options: [
           {
-            name: "Stress relief and beauty",
+            name: "Block sound and beautify your space",
             text: "Noise is one of the biggest stressors in our homes today. What if your walls could block sound and beautify your space?",
           },
           {
-            name: "Say goodbye to ugly soundproofing",
-            text: "Say goodbye to ugly soundproofing! Our panels reduce noise and turn your walls into art.",
+            name: "Imagine this",
+            text: "Imagine this: you moved into a brand new apartment, but the construction next door is too loud. Or your new roommate has a mechanical keyboard! Luckily for you, we have a stylish way to restore your peace.",
           },
         ],
       },
@@ -1132,11 +1148,11 @@ export const COMPANIES: Company[] = [
         options: [
           {
             name: "City dweller with noise struggles",
-            text: "As a city dweller, I struggled with constant noise pollution and couldn’t find an aesthetically pleasing solution. That’s why I created Soundscape Panels.",
+            text: "As a city dweller, I struggled with constant noise pollution and couldn't find an aesthetically pleasing solution. That's why I created Soundscape Panels.",
           },
           {
             name: "Interior designer inspiration",
-            text: "With my background in interior design, I saw how many clients wanted functional decor that also looked beautiful—Soundscape Panels were born to meet that need.",
+            text: "With my background in interior design, I saw how many clients wanted functional decor that also looked beautiful. Soundscape Panels were born to meet that need.",
           },
         ],
       },
@@ -1158,7 +1174,7 @@ export const COMPANIES: Company[] = [
         options: [
           {
             name: "Decibel reduction demo",
-            text: "Using a sound meter, we demonstrate how our panels significantly reduce noise levels in real-time.",
+            text: "Using this sound meter, allow me to demonstrate how our panels significantly reduce noise levels in real-time.",
           },
           {
             name: "Show design options",
@@ -1166,7 +1182,7 @@ export const COMPANIES: Company[] = [
           },
           {
             name: "Easy installation",
-            text: "We demonstrate how lightweight and easy-to-mount our panels are, requiring no special tools or professional installation.",
+            text: "Look how lightweight and easy-to-mount our panels are, requiring no special tools or professional installation.",
           },
         ],
       },
@@ -1212,10 +1228,6 @@ export const COMPANIES: Company[] = [
         section: "traction",
         options: [
           {
-            name: "$100,000 in early sales",
-            text: "We’ve achieved $100,000 in revenue within the first 8 months, demonstrating strong early demand.",
-          },
-          {
             name: "Highly rated by customers",
             text: "Over 500 customers have rated us 4.8 stars on average, highlighting both functionality and aesthetics.",
           },
@@ -1225,7 +1237,7 @@ export const COMPANIES: Company[] = [
           },
           {
             name: "Interior design partnerships",
-            text: "We’ve partnered with two major interior design firms to integrate our panels into residential and commercial projects.",
+            text: "We've partnered with two major interior design firms to integrate our panels into residential and commercial projects.",
           },
         ],
       },
@@ -1238,7 +1250,7 @@ export const COMPANIES: Company[] = [
           },
           {
             name: "Expand marketing",
-            text: "We’ll use funds to launch targeted marketing campaigns aimed at urban professionals and interior designers.",
+            text: "We'll use funds to launch targeted marketing campaigns aimed at urban professionals and interior designers.",
           },
         ],
       },
@@ -1247,11 +1259,11 @@ export const COMPANIES: Company[] = [
         options: [
           {
             name: "Peaceful homes, stylish spaces",
-            text: "Sharks, let’s transform homes into peaceful, stylish spaces together with Soundscape Panels.",
+            text: "With SoundScape panels, you get peaceful homes and stylish spaces. Invest today!",
           },
           {
             name: "The art of quiet",
-            text: "Join us in creating the ultimate solution to noise and design challenges—Soundscape Panels.",
+            text: "Sharks, join us in creating the art of quiet.",
           },
         ],
       },
@@ -1281,16 +1293,16 @@ export const COMPANIES: Company[] = [
   },
   {
     company: {
-      name: "Magnetic Road Sweeper",
+      name: "MagSweep",
       industry: "Auto Parts",
       oneSentence:
-        "Our magnetic road sweeper is a simple, attachable device that picks up metal debris before your tires ever reach it, preventing flat tires and improving road safety.",
+        "MagSweep attaches to your car and picks up metal debris before they pop your tires.",
       ask: "We are seeking $250,000 for 15% of our company.",
       revenue:
         "We sold 3,000 units in our first year, generating $360,000 in revenue.",
     },
     unitEconomics: {
-      unitOfSales: "Magnetic road sweeper",
+      unitOfSales: "devices",
       costPerUnitCents: 3800,
       pricePerUnitCents: 12000,
       unitsSold: 3000,
@@ -1404,7 +1416,7 @@ export const COMPANIES: Company[] = [
           },
           {
             name: "Retail partnerships",
-            text: "We are building partnerships with major auto parts stores, such as AutoZone and O’Reilly Auto Parts, to make our product widely available.",
+            text: "We are building partnerships with major auto parts stores, such as AutoZone and O'Reilly Auto Parts, to make our product widely available.",
           },
           {
             name: "Fleet contracts",
@@ -1433,12 +1445,12 @@ export const COMPANIES: Company[] = [
         section: "closing",
         options: [
           {
-            name: "Safer roads, fewer flats",
-            text: "Sharks, with your help, we can create safer roads and ensure fewer flat tires for drivers everywhere. Join us in making this game-changing device a success.",
+            name: "Prevention is protection",
+            text: "Sharks, remember: prevention is protection. With your help, we can create safer roads and ensure fewer flat tires for drivers everywhere.",
           },
           {
-            name: "Clean roads, better driving",
-            text: "Join us, Sharks, and help drivers everywhere enjoy cleaner roads, safer driving, and fewer flat tires. Together, we can make every journey smoother.",
+            name: "Magnetic attraction",
+            text: "Let's do a deal to make MagSweep a huge success. Sharks, I can already feel a magnetic attraction!",
           },
         ],
       },

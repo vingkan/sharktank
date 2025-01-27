@@ -15,6 +15,7 @@ import { useState, useEffect } from "react";
 import type { Company } from "../data/types";
 import { COMPANIES } from "../data/companies";
 import { SECTIONS } from "../data/sections";
+import { Link } from "react-router-dom";
 
 type Step = "select" | "build" | "review";
 type Choices = Record<string, string[]>;
@@ -22,8 +23,12 @@ type Choices = Record<string, string[]>;
 export default function PitchBuilder() {
   // Load initial state from localStorage
   const [selectedCompany, setSelectedCompany] = useState<Company | null>(() => {
-    const saved = localStorage.getItem("selectedCompany");
-    return saved ? JSON.parse(saved) : null;
+    const saved = localStorage.getItem("selectedCompanyName");
+    if (saved) {
+      const foundCompany = COMPANIES.find((c) => c.company.name === saved);
+      return foundCompany || null;
+    }
+    return null;
   });
   const [currentStep, setCurrentStep] = useState<Step>(() => {
     const saved = localStorage.getItem("currentStep");
@@ -53,9 +58,9 @@ export default function PitchBuilder() {
   // Update localStorage when state changes
   useEffect(() => {
     if (selectedCompany) {
-      localStorage.setItem("selectedCompany", JSON.stringify(selectedCompany));
+      localStorage.setItem("selectedCompanyName", selectedCompany.company.name);
     } else {
-      localStorage.removeItem("selectedCompany");
+      localStorage.removeItem("selectedCompanyName");
     }
   }, [selectedCompany]);
 
@@ -96,6 +101,16 @@ export default function PitchBuilder() {
     }
   }, [selectedQAIndex]);
 
+  useEffect(() => {
+    const savedCompanyName = localStorage.getItem("selectedCompanyName");
+    if (savedCompanyName && COMPANIES) {
+      const foundCompany = COMPANIES.find(
+        (c) => c.company.name === savedCompanyName
+      );
+      setSelectedCompany(foundCompany || null);
+    }
+  }, []);
+
   const handleSelectCompany = (company: Company) => {
     setSelectedCompany(company);
     setCurrentStep("build");
@@ -104,7 +119,7 @@ export default function PitchBuilder() {
   };
 
   const clearStoredData = () => {
-    localStorage.removeItem("selectedCompany");
+    localStorage.removeItem("selectedCompanyName");
     localStorage.removeItem("currentStep");
     localStorage.removeItem("currentSectionIndex");
     localStorage.removeItem("choices");
@@ -162,7 +177,14 @@ export default function PitchBuilder() {
     return (
       <Box>
         <Flex justify="start" align="center" gap="4" mb="4">
-          <img src="../sharktank/icon.png" alt="logo" width={64} height={64} />
+          <Link to="/">
+            <img
+              src="../sharktank/icon.png"
+              alt="logo"
+              width={64}
+              height={64}
+            />
+          </Link>
           <Heading size="8">Pitch Creator</Heading>
         </Flex>
         <Text size="5" my="4" color="gray">
@@ -170,7 +192,9 @@ export default function PitchBuilder() {
           pitch!
         </Text>
         <Grid my="4" columns={{ initial: "1", sm: "2", md: "3" }} gap="4">
-          {COMPANIES.map((company, index) => (
+          {COMPANIES.sort((a, b) =>
+            a.company.industry.localeCompare(b.company.industry)
+          ).map((company, index) => (
             <Card
               key={index}
               style={{ cursor: "pointer" }}
@@ -205,7 +229,14 @@ export default function PitchBuilder() {
     return (
       <Box>
         <Flex justify="between" align="center" gap="4" mb="4">
-          <img src="../sharktank/icon.png" alt="logo" width={48} height={48} />
+          <Link to="/">
+            <img
+              src="../sharktank/icon.png"
+              alt="logo"
+              width={48}
+              height={48}
+            />
+          </Link>
           <Progress
             value={((currentSectionIndex + 1) / SECTIONS.length) * 100}
           />
@@ -311,6 +342,17 @@ export default function PitchBuilder() {
             pitch.push(selectedCompany.company.ask);
           }
           return;
+        }
+
+        // Insert year one revenue after production
+        if (section.section === "production") {
+          const productionOption = sectionData.options.find(
+            (opt) => opt.name === sectionChoices[0]
+          );
+          if (productionOption) {
+            pitch.push(productionOption.text);
+            pitch.push(selectedCompany.company.revenue);
+          }
         }
 
         // Add selected options text
@@ -482,9 +524,14 @@ export default function PitchBuilder() {
           >
             Back
           </Button>
+          <Link to="/">
+            <Button variant="ghost" size="3">
+              Home
+            </Button>
+          </Link>
           <Button
-            variant="ghost"
             size="3"
+            variant="ghost"
             color="red"
             onClick={handleStartOver}
           >
@@ -534,6 +581,17 @@ export default function PitchBuilder() {
     );
   }
 
-  // We'll implement the review step next
-  return <div>Review pitch for {selectedCompany?.company.name}</div>;
+  return (
+    <Box>
+      <Text size="5">We could not find what you were looking for.</Text>
+      <Button
+        onClick={() => {
+          localStorage.clear();
+          window.location.reload();
+        }}
+      >
+        Start Over
+      </Button>
+    </Box>
+  );
 }
