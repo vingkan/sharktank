@@ -3,6 +3,7 @@ import { Layout } from "./components/Layout";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import { BASENAME, useStaticRedirect } from "./utils/redirect";
+import PitchBuilder from "./pages/PitchBuilder";
 
 function AppPage() {
   useStaticRedirect();
@@ -10,6 +11,7 @@ function AppPage() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/pitch" element={<PitchBuilder />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
