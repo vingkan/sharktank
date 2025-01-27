@@ -225,14 +225,18 @@ export default function PitchBuilder() {
           <Flex direction="column" gap="3" my="4">
             <RadioCards.Root
               size="3"
-              columns="1"
+              columns={{ initial: "1", sm: "2" }}
               value={currentChoices[0]}
               onValueChange={(value) =>
                 handleOptionSelect(currentSection.section, value)
               }
             >
               {sectionData?.options.map((option, index) => (
-                <RadioCards.Item key={index} value={option.name}>
+                <RadioCards.Item
+                  key={index}
+                  value={option.name}
+                  style={{ textAlign: "center" }}
+                >
                   <Text as="p" size="5">
                     {option.name}
                   </Text>
@@ -244,6 +248,7 @@ export default function PitchBuilder() {
         {currentSection.type === "pickTwo" && (
           <CheckboxCards.Root
             size="3"
+            columns={{ initial: "1", sm: "2" }}
             value={currentChoices}
             onValueChange={(value) => {
               if (value.length <= 2) {

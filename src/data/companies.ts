@@ -188,6 +188,552 @@ export const COMPANIES: Company[] = [
   },
   {
     company: {
+      name: "Escape Room in a Box",
+      industry: "Entertainment",
+      oneSentence:
+        "Escape Room in a Box brings the thrill of escape rooms to your home with immersive, story-driven DIY kits.",
+      ask: "We are seeking $300,000 for 15% of our company.",
+      revenue: "We did $200,000 in sales in our first year.",
+    },
+    unitEconomics: {
+      unitOfSales: "kits",
+      costPerUnitCents: 1000,
+      pricePerUnitCents: 4000,
+      unitsSold: 5000,
+      yearOneSalesCents: 20000000,
+    },
+    pitchSections: {
+      hook: {
+        section: "hook",
+        options: [
+          {
+            name: "Excitement of escape rooms at home",
+            text: "Imagine bringing the excitement of an escape room right to your living room. Escape Room in a Box makes it possible.",
+          },
+          {
+            name: "Affordable fun alternative",
+            text: "Why spend hundreds on an escape room experience when you can have the same thrill at home for a fraction of the cost?",
+          },
+        ],
+      },
+      founder: {
+        section: "founder",
+        options: [
+          {
+            name: "Lifelong puzzle lover",
+            text: "I’ve always loved puzzles and immersive storytelling. When I saw how expensive and logistically tricky escape rooms could be, I decided to create a solution that was affordable and easy to enjoy at home.",
+          },
+          {
+            name: "Game designer turned entrepreneur",
+            text: "With my background in game design, I saw an opportunity to take the fun and challenge of escape rooms and turn it into something anyone can enjoy at home, any time.",
+          },
+        ],
+      },
+      customer: {
+        section: "customer",
+        options: [
+          {
+            name: "Families and game night enthusiasts",
+            text: "We cater to families, game night enthusiasts, and anyone looking for screen-free, interactive entertainment. Our kits are perfect for bonding and creating unforgettable memories.",
+          },
+          {
+            name: "Corporate team-building",
+            text: "We also target corporate clients for team-building activities, offering customizable kits that encourage collaboration and problem-solving.",
+          },
+        ],
+      },
+      demo: {
+        section: "demo",
+        options: [
+          {
+            name: "Showcase physical kit",
+            text: "Here is one of our kits. You’ll see it includes lockable boxes, secret codes, and beautifully designed props that immerse players in the story.",
+          },
+          {
+            name: "Sample puzzle demonstration",
+            text: "Let me show you a simple puzzle from one of our kits. This riddle leads to a hidden compartment, giving you a taste of the thrill.",
+          },
+          {
+            name: "Highlight themes and variety",
+            text: "We offer themes like spy missions, haunted mansions, and treasure hunts—each with multiple difficulty levels to suit any group.",
+          },
+        ],
+      },
+      production: {
+        section: "production",
+        options: [
+          {
+            name: "Collaborate with writers and puzzle experts",
+            text: "We work with game designers and writers to craft original storylines and puzzles that provide a seamless and exciting game flow.",
+          },
+          {
+            name: "Eco-friendly materials",
+            text: "Our kits are made with eco-friendly packaging and reusable components, appealing to environmentally conscious consumers.",
+          },
+          {
+            name: "Local assembly",
+            text: "While we outsource production of components, all kits are assembled and quality-tested locally to ensure high standards.",
+          },
+        ],
+      },
+      distribution: {
+        section: "distribution",
+        options: [
+          {
+            name: "E-commerce platforms",
+            text: "We sell through our website and Amazon, offering convenient online purchases with shipping options.",
+          },
+          {
+            name: "Retail partnerships",
+            text: "We’ve partnered with toy stores, bookstores, and big-box retailers to reach a wider audience.",
+          },
+          {
+            name: "Subscription model",
+            text: "We’re introducing a subscription model where customers receive new themed kits monthly or quarterly.",
+          },
+          {
+            name: "Corporate sales",
+            text: "Corporate clients use our kits for team-building, with customization options available for unique branding.",
+          },
+        ],
+      },
+      traction: {
+        section: "traction",
+        options: [
+          {
+            name: "Positive customer reviews",
+            text: "We’ve received glowing reviews for ease of setup, immersive quality, and the replayability of our kits.",
+          },
+          {
+            name: "Growing online sales",
+            text: "Our online sales have grown steadily, driven by repeat customers and word-of-mouth recommendations.",
+          },
+          {
+            name: "Featured by influencers",
+            text: "Influencers in the gaming and family entertainment space have showcased our kits, driving brand awareness and sales.",
+          },
+          {
+            name: "Strong holiday sales",
+            text: "The holiday season has been especially successful, with kits being a popular gift for families and friends.",
+          },
+        ],
+      },
+      investment: {
+        section: "investment",
+        options: [
+          {
+            name: "Diversify themes and difficulty levels",
+            text: "We want to create new storylines and higher difficulty levels to cater to a broader range of players.",
+          },
+          {
+            name: "Scale production",
+            text: "We’ll use the investment to scale production, improve kit quality, and ensure we can meet growing demand.",
+          },
+          {
+            name: "Expand marketing efforts",
+            text: "We plan to invest in targeted marketing campaigns to reach new audiences and expand our online presence.",
+          },
+        ],
+      },
+      closing: {
+        section: "closing",
+        options: [
+          {
+            name: "Unlock the fun",
+            text: "Sharks, are you ready to unlock the fun and bring escape rooms to homes everywhere?",
+          },
+          {
+            name: "The thrill is yours",
+            text: "Join us in making Escape Room in a Box the ultimate at-home adventure experience!",
+          },
+        ],
+      },
+    },
+    questionsAndAnswers: [
+      {
+        question: "How much does it cost you and how much do you sell it for?",
+        answer:
+          "It costs us $10 to produce each kit, and we sell them for $40 each.",
+      },
+      {
+        question: "How many units have you sold?",
+        answer:
+          "We sold 5,000 kits in our first year and are on track to double that this year.",
+      },
+      {
+        question:
+          "What’s your plan for competing with other at-home entertainment options?",
+        answer:
+          "Our kits offer something unique: immersive, story-driven experiences that engage players on a deeper level than board games or VR. Our variety of themes and difficulty levels also set us apart.",
+      },
+      {
+        question:
+          "How do you ensure quality control with outsourced manufacturing?",
+        answer:
+          "We assemble and test all kits locally to maintain high standards and ensure every customer has a great experience.",
+      },
+    ],
+  },
+  {
+    company: {
+      name: "EcoEvent Solutions",
+      industry: "Sustainability and Events",
+      oneSentence:
+        "EcoEvent Solutions offers pre-packaged waste management kits to simplify cleanup and reduce waste at outdoor events.",
+      ask: "We are seeking $200,000 for 20% of our company.",
+      revenue:
+        "$75,000 in initial sales from pilot programs and direct orders.",
+    },
+    unitEconomics: {
+      unitOfSales: "waste management kits",
+      costPerUnitCents: 600,
+      pricePerUnitCents: 1500,
+      unitsSold: 5000,
+      yearOneSalesCents: 7500000,
+    },
+    pitchSections: {
+      hook: {
+        section: "hook",
+        options: [
+          {
+            name: "Event waste chaos to order",
+            text: "Outdoor events are fun, but the waste they generate is anything but. We’ve created a pre-packaged waste management kit to turn chaos into order—helping event organizers, attendees, and the planet all at once!",
+          },
+          {
+            name: "Simplify cleanup",
+            text: "Picture festivals, marathons, or concerts leaving behind mountains of trash. Our kits simplify cleanup and reduce landfill waste, one event at a time.",
+          },
+        ],
+      },
+      founder: {
+        section: "founder",
+        options: [
+          {
+            name: "Sustainability advocate",
+            text: "As a passionate attendee of outdoor events, I was struck by the waste left behind. My background in environmental science inspired me to create a scalable solution for event waste management.",
+          },
+          {
+            name: "Event volunteer turned entrepreneur",
+            text: "After volunteering to clean up several events, I realized the issue wasn’t lack of effort—it was lack of tools. That’s why I created EcoEvent Solutions.",
+          },
+        ],
+      },
+      customer: {
+        section: "customer",
+        options: [
+          {
+            name: "Event organizers",
+            text: "We target event organizers such as festivals, marathons, and fairs, helping them manage waste more efficiently and reduce cleanup costs.",
+          },
+          {
+            name: "Eco-conscious planners",
+            text: "Our customers include eco-conscious planners looking for sustainable solutions to make their events cleaner and greener.",
+          },
+        ],
+      },
+      demo: {
+        section: "demo",
+        options: [
+          {
+            name: "Kit contents showcase",
+            text: "Each kit includes color-coded biodegradable bags, clear signage, gloves, and grabbers. These tools make waste segregation easy for attendees.",
+          },
+          {
+            name: "Before-and-after visuals",
+            text: "Here’s a before-and-after comparison of a festival that used our kits versus one that didn’t. The difference is night and day.",
+          },
+          {
+            name: "Set-up demonstration",
+            text: "Let us show you how easy it is to set up our kits at key event locations to encourage attendee participation.",
+          },
+        ],
+      },
+      production: {
+        section: "production",
+        options: [
+          {
+            name: "Biodegradable components",
+            text: "We source biodegradable bags, eco-friendly signage, and other components to ensure minimal environmental impact.",
+          },
+          {
+            name: "Centralized assembly",
+            text: "Our kits are assembled at a centralized facility, ensuring quality control and scalability.",
+          },
+          {
+            name: "Custom branding",
+            text: "We offer custom-branded signage and instructions for larger event organizers, making our kits adaptable to their needs.",
+          },
+        ],
+      },
+      distribution: {
+        section: "distribution",
+        options: [
+          {
+            name: "Online store",
+            text: "Our kits are available for direct purchase through our website, ideal for small to mid-sized events.",
+          },
+          {
+            name: "Bulk orders",
+            text: "We cater to large-scale events with bulk order options, offering significant cost savings.",
+          },
+          {
+            name: "Retail partnerships",
+            text: "We are working on placing our kits in event supply stores and sustainability-focused retailers.",
+          },
+          {
+            name: "Event planning companies",
+            text: "We partner with event planning companies and waste management firms to bundle our kits with their services.",
+          },
+        ],
+      },
+      traction: {
+        section: "traction",
+        options: [
+          {
+            name: "Successful pilot programs",
+            text: "Our kits reduced landfill-bound waste by 40% at two local music festivals, saving organizers significant cleanup costs.",
+          },
+          {
+            name: "Revenue growth",
+            text: "We’ve generated $75,000 in sales through pilot programs and direct orders in our first year.",
+          },
+          {
+            name: "Partnerships secured",
+            text: "We’ve partnered with two event-planning companies and a waste management firm to streamline post-event disposal.",
+          },
+          {
+            name: "Positive feedback",
+            text: "Event organizers and attendees alike have praised the simplicity and eco-conscious nature of our kits.",
+          },
+        ],
+      },
+      investment: {
+        section: "investment",
+        options: [
+          {
+            name: "Scale production",
+            text: "We plan to invest in increasing production capacity to meet growing demand and develop kits for niche markets like weddings and corporate events.",
+          },
+          {
+            name: "Expand marketing",
+            text: "Funds will be used to launch targeted marketing campaigns aimed at large-scale festivals and other major events.",
+          },
+        ],
+      },
+      closing: {
+        section: "closing",
+        options: [
+          {
+            name: "Cleaner events, greener future",
+            text: "Sharks, let’s make every event cleaner and greener together with EcoEvent Solutions.",
+          },
+          {
+            name: "The waste management revolution",
+            text: "Join us in revolutionizing event waste management and creating a more sustainable future.",
+          },
+        ],
+      },
+    },
+    questionsAndAnswers: [
+      {
+        question: "How much does it cost you and how much do you sell it for?",
+        answer:
+          "Our kits cost $5-$6 to produce, and we sell them for $15-$20 depending on the size of the event.",
+      },
+      {
+        question: "What kind of events have you worked with so far?",
+        answer:
+          "We’ve worked with music festivals, marathons, and local fairs, and we’re looking to expand into corporate events and weddings.",
+      },
+      {
+        question: "How do you ensure attendee participation?",
+        answer:
+          "Our kits include clear signage and simple instructions, making it easy for attendees to know where and how to dispose of waste.",
+      },
+      {
+        question: "What’s your plan for scaling?",
+        answer:
+          "We plan to partner with more event planners and waste management firms while increasing production capacity to handle larger order volumes.",
+      },
+    ],
+  },
+  {
+    company: {
+      name: "DriveAds",
+      industry: "Advertising and Technology",
+      oneSentence:
+        "DriveAds transforms cars into moving billboards, enabling drivers to earn passive income and businesses to reach hyper-local audiences.",
+      ask: "We are seeking $500,000 for 12% of our company.",
+      revenue:
+        "$270/month per driver in ad and lease revenue based on updated impressions and pricing assumptions.",
+    },
+    unitEconomics: {
+      unitOfSales: "digital display units",
+      costPerUnitCents: 20000,
+      pricePerUnitCents: 50000,
+      unitsSold: 400,
+      yearOneSalesCents: 270000000,
+    },
+    pitchSections: {
+      hook: {
+        section: "hook",
+        options: [
+          {
+            name: "Earn while you drive",
+            text: "Imagine your car making money for you while you drive, just by displaying digital ads. DriveAds makes it possible.",
+          },
+          {
+            name: "Turn cars into billboards",
+            text: "What if your daily commute could earn you passive income? DriveAds transforms vehicles into moving billboards for businesses.",
+          },
+        ],
+      },
+      founder: {
+        section: "founder",
+        options: [
+          {
+            name: "Rideshare driver inspiration",
+            text: "As a former rideshare driver, I saw the untapped advertising potential on cars. That’s why I created DriveAds to help drivers earn more while they’re on the road.",
+          },
+          {
+            name: "Ad tech entrepreneur",
+            text: "With my background in advertising technology, I knew there was an opportunity to connect businesses and drivers for mutual benefit. DriveAds is the result.",
+          },
+        ],
+      },
+      customer: {
+        section: "customer",
+        options: [
+          {
+            name: "Drivers seeking passive income",
+            text: "Our primary customers are drivers—rideshare drivers, delivery workers, and commuters—who want to earn passive income without extra effort.",
+          },
+          {
+            name: "Businesses seeking geo-targeted ads",
+            text: "We also target businesses looking for hyper-local advertising that stands out and delivers measurable ROI.",
+          },
+        ],
+      },
+      demo: {
+        section: "demo",
+        options: [
+          {
+            name: "Sleek digital display",
+            text: "Our sleek, weatherproof digital displays mount easily on a car’s roof or rear window, blending seamlessly with vehicle aesthetics.",
+          },
+          {
+            name: "Companion app",
+            text: "Drivers can track their earnings and ad performance through our intuitive companion app, which also handles payments.",
+          },
+          {
+            name: "Dynamic ad targeting",
+            text: "Using GPS technology, we deliver geo-targeted ads that rotate dynamically to maximize exposure for businesses.",
+          },
+        ],
+      },
+      production: {
+        section: "production",
+        options: [
+          {
+            name: "Durable digital displays",
+            text: "We partner with manufacturers to produce durable, weatherproof digital screens with energy-efficient LED technology.",
+          },
+          {
+            name: "Integrated GPS and Wi-Fi",
+            text: "Each unit comes pre-assembled with GPS and Wi-Fi modules for seamless integration into our advertising platform.",
+          },
+          {
+            name: "Quality control",
+            text: "Our displays undergo rigorous testing for durability, weather resistance, and compatibility with various vehicle models.",
+          },
+        ],
+      },
+      distribution: {
+        section: "distribution",
+        options: [
+          {
+            name: "Direct-to-consumer sales",
+            text: "Drivers can purchase or lease display units directly through our website or mobile app.",
+          },
+          {
+            name: "Partnerships with rideshare companies",
+            text: "We collaborate with rideshare and delivery companies to incentivize their drivers to adopt DriveAds.",
+          },
+          {
+            name: "Ad agency partnerships",
+            text: "We work with ad agencies to include DriveAds in their media offerings, expanding our reach to more businesses.",
+          },
+        ],
+      },
+      traction: {
+        section: "traction",
+        options: [
+          {
+            name: "Successful pilot program",
+            text: "Our pilot program with 50 drivers across two cities generated $80,000 in ad sales and showed strong ROI for businesses.",
+          },
+          {
+            name: "Positive driver feedback",
+            text: "70% of drivers from our pilot opted to continue using DriveAds, earning an average of $250/month in ad revenue.",
+          },
+          {
+            name: "Business demand growth",
+            text: "We’ve received increasing inquiries from regional businesses interested in hyper-local advertising through DriveAds.",
+          },
+        ],
+      },
+      investment: {
+        section: "investment",
+        options: [
+          {
+            name: "Scale production",
+            text: "We’ll use investment funds to scale production of display units and improve display technology.",
+          },
+          {
+            name: "Grow driver and business network",
+            text: "We’ll invest in marketing to onboard more drivers and businesses, expanding our presence in major cities.",
+          },
+        ],
+      },
+      closing: {
+        section: "closing",
+        options: [
+          {
+            name: "Turn drive time into dollar signs",
+            text: "Sharks, help us turn drive time into dollar signs and revolutionize outdoor advertising with DriveAds.",
+          },
+          {
+            name: "Join the advertising evolution",
+            text: "Join us in transforming cars into moving billboards and creating a win-win for drivers and businesses alike.",
+          },
+        ],
+      },
+    },
+    questionsAndAnswers: [
+      {
+        question: "How much does it cost you and how much do you sell it for?",
+        answer:
+          "Our displays cost $200 to produce, and we sell them for $500 or lease them for $20/month. Drivers earn $250/month in ad revenue.",
+      },
+      {
+        question: "How do drivers earn money?",
+        answer:
+          "Drivers earn $250/month from ad impressions and retain 70% of that revenue, plus the opportunity to earn more in high-traffic areas.",
+      },
+      {
+        question: "What’s your plan for scaling?",
+        answer:
+          "We plan to scale by partnering with rideshare companies, expanding driver incentives, and targeting businesses in additional cities.",
+      },
+      {
+        question: "How do you ensure ads reach the right audience?",
+        answer:
+          "Our GPS technology ensures ads are shown in targeted locations, maximizing relevance and ROI for businesses.",
+      },
+    ],
+  },
+  {
+    company: {
       name: "Adaptive Threads",
       industry: "Apparel",
       oneSentence:
@@ -369,6 +915,367 @@ export const COMPANIES: Company[] = [
         question: "How are you marketing your product?",
         answer:
           "We target our customers through digital ads, partnerships with occupational therapists, and direct outreach to caregiving organizations and healthcare providers.",
+      },
+    ],
+  },
+  {
+    company: {
+      name: "Apology.com",
+      industry: "E-commerce",
+      oneSentence:
+        'Apology.com makes it easy to say "I\'m sorry" with curated gifts tailored to specific apology situations.',
+      ask: "We are seeking $400,000 for 15% of our company.",
+      revenue:
+        "We received 10,000 visitors in our first two months with a 12% conversion rate.",
+    },
+    unitEconomics: {
+      unitOfSales: "gift packages",
+      costPerUnitCents: 9000,
+      pricePerUnitCents: 15000,
+      unitsSold: 5000,
+      yearOneSalesCents: 75000000,
+    },
+    pitchSections: {
+      hook: {
+        section: "hook",
+        options: [
+          {
+            name: "Apologies made easy",
+            text: "Apologizing is hard, but shopping for the perfect apology gift shouldn’t be. Apology.com makes it easy to say 'I’m sorry' in the most thoughtful way possible.",
+          },
+          {
+            name: "Remorse meets retail",
+            text: "What if shopping for a gift didn’t start with the product but with the reason you’re buying it? Apology.com turns remorse into retail.",
+          },
+        ],
+      },
+      founder: {
+        section: "founder",
+        options: [
+          {
+            name: "Inspired by awkward apologies",
+            text: "As someone who has struggled with awkward apologies, I created Apology.com to simplify the process and make it meaningful.",
+          },
+          {
+            name: "E-commerce meets emotion",
+            text: "With my background in marketing, I saw an opportunity to combine emotion and e-commerce to help people repair relationships with thoughtful gifts.",
+          },
+        ],
+      },
+      customer: {
+        section: "customer",
+        options: [
+          {
+            name: "Men seeking thoughtful gifts",
+            text: "Our primary audience is men who want convenient, thoughtful ways to apologize to their partners, friends, or colleagues.",
+          },
+          {
+            name: "Couples and individuals repairing relationships",
+            text: "We also target couples and divorced individuals who are looking for ways to repair strained relationships with thoughtful gestures.",
+          },
+        ],
+      },
+      demo: {
+        section: "demo",
+        options: [
+          {
+            name: "Browse apology categories",
+            text: "Our platform allows users to browse gifts based on the reason for the apology, such as 'Missed an Anniversary' or 'Said Something Hurtful.'",
+          },
+          {
+            name: "Highlight premium products",
+            text: "We feature premium products, including jewelry, spa kits, and custom gifts, tailored to the apology type.",
+          },
+          {
+            name: "Seamless checkout",
+            text: "Our intuitive checkout process includes options for handwritten notes, gift wrapping, and rush shipping.",
+          },
+        ],
+      },
+      production: {
+        section: "production",
+        options: [
+          {
+            name: "Premium suppliers",
+            text: "We partner with trusted suppliers for high-quality products like flowers, jewelry, and spa kits.",
+          },
+          {
+            name: "Dropshipping for scalability",
+            text: "We utilize dropshipping for non-perishable items, ensuring flexibility and scalability without high inventory costs.",
+          },
+          {
+            name: "Personalization at scale",
+            text: "We collaborate with local fulfillment centers to offer handwritten notes, gift wrapping, and custom packaging.",
+          },
+        ],
+      },
+      distribution: {
+        section: "distribution",
+        options: [
+          {
+            name: "Direct-to-consumer platform",
+            text: "Our primary sales channel is the Apology.com website, where users can explore curated gift options.",
+          },
+          {
+            name: "Affiliate partnerships",
+            text: "We collaborate with influencers, bloggers, and relationship coaches to drive targeted traffic to our platform.",
+          },
+          {
+            name: "Corporate gifting",
+            text: "We provide apology gift packages for corporate clients, catering to HR teams and professional contexts.",
+          },
+        ],
+      },
+      traction: {
+        section: "traction",
+        options: [
+          {
+            name: "Viral TikTok campaign",
+            text: "Our TikTok campaign featuring 'apology fails' garnered over 2 million views, driving significant traffic to our site.",
+          },
+          {
+            name: "Exclusive luxury brand partnerships",
+            text: "We’ve partnered with luxury jewelry brands to offer exclusive, high-end apology gifts.",
+          },
+          {
+            name: "Positive customer feedback",
+            text: "80% of male customers reported that Apology.com made shopping for gifts significantly easier.",
+          },
+          {
+            name: "Featured in relationship blogs",
+            text: "We’ve been featured in top relationship advice blogs as a leading solution for repairing relationships through thoughtful gifting.",
+          },
+        ],
+      },
+      investment: {
+        section: "investment",
+        options: [
+          {
+            name: "Expand marketing",
+            text: "We plan to use investment funds to scale our marketing efforts, focusing on social media campaigns and targeted advertising.",
+          },
+          {
+            name: "Build inventory and partnerships",
+            text: "We’ll invest in expanding our product categories and forging more partnerships with high-end brands.",
+          },
+        ],
+      },
+      closing: {
+        section: "closing",
+        options: [
+          {
+            name: "Simplify apologies",
+            text: "Sharks, let’s simplify the art of apologizing together and help people say 'I’m sorry' with Apology.com.",
+          },
+          {
+            name: "Turn remorse into revenue",
+            text: "Join us in turning remorse into revenue and making heartfelt gifting effortless with Apology.com.",
+          },
+        ],
+      },
+    },
+    questionsAndAnswers: [
+      {
+        question: "How much does it cost you and how much do you sell it for?",
+        answer:
+          "Our gifts cost $60-$120 to produce, and we sell them for $80-$500 depending on the category and personalization.",
+      },
+      {
+        question: "How do you differentiate from competitors?",
+        answer:
+          "We are the first platform to organize gifts by apology type, offering curated, premium products with seamless personalization.",
+      },
+      {
+        question: "What’s your customer acquisition strategy?",
+        answer:
+          "Our strategy includes viral social media campaigns, partnerships with relationship coaches, and targeted ads aimed at men and couples.",
+      },
+      {
+        question: "How do you ensure personalization at scale?",
+        answer:
+          "We work with fulfillment centers that specialize in handwritten notes, custom packaging, and same-day shipping to maintain quality at scale.",
+      },
+    ],
+  },
+  {
+    company: {
+      name: "Soundscape Panels",
+      industry: "Home Improvement",
+      oneSentence:
+        "Soundscape Panels offer stylish, soundproofing wall art to transform noisy spaces into peaceful, beautiful environments.",
+      ask: "We are seeking $300,000 for 12% of our company.",
+      revenue: "We did $100,000 in sales in our first 8 months.",
+    },
+    unitEconomics: {
+      unitOfSales: "panels",
+      costPerUnitCents: 3200,
+      pricePerUnitCents: 12500,
+      unitsSold: 3000,
+      yearOneSalesCents: 37500000,
+    },
+    pitchSections: {
+      hook: {
+        section: "hook",
+        options: [
+          {
+            name: "Stress relief and beauty",
+            text: "Noise is one of the biggest stressors in our homes today. What if your walls could block sound and beautify your space?",
+          },
+          {
+            name: "Say goodbye to ugly soundproofing",
+            text: "Say goodbye to ugly soundproofing! Our panels reduce noise and turn your walls into art.",
+          },
+        ],
+      },
+      founder: {
+        section: "founder",
+        options: [
+          {
+            name: "City dweller with noise struggles",
+            text: "As a city dweller, I struggled with constant noise pollution and couldn’t find an aesthetically pleasing solution. That’s why I created Soundscape Panels.",
+          },
+          {
+            name: "Interior designer inspiration",
+            text: "With my background in interior design, I saw how many clients wanted functional decor that also looked beautiful—Soundscape Panels were born to meet that need.",
+          },
+        ],
+      },
+      customer: {
+        section: "customer",
+        options: [
+          {
+            name: "Urban professionals and families",
+            text: "We target urban professionals and families seeking quieter, more peaceful living spaces without sacrificing style.",
+          },
+          {
+            name: "Interior designers and architects",
+            text: "We cater to interior designers and architects looking for innovative, dual-purpose solutions that combine soundproofing with decor.",
+          },
+        ],
+      },
+      demo: {
+        section: "demo",
+        options: [
+          {
+            name: "Decibel reduction demo",
+            text: "Using a sound meter, we demonstrate how our panels significantly reduce noise levels in real-time.",
+          },
+          {
+            name: "Show design options",
+            text: "Here are our design options, ranging from abstract art to custom images, ensuring a fit for any interior style.",
+          },
+          {
+            name: "Easy installation",
+            text: "We demonstrate how lightweight and easy-to-mount our panels are, requiring no special tools or professional installation.",
+          },
+        ],
+      },
+      production: {
+        section: "production",
+        options: [
+          {
+            name: "Partner with artists for exclusive designs",
+            text: "We collaborate with artists to create exclusive, visually stunning panel designs.",
+          },
+          {
+            name: "Acoustic foam technology",
+            text: "Our panels use high-density acoustic foam or fiberboard to deliver top-tier soundproofing performance.",
+          },
+          {
+            name: "Eco-friendly materials",
+            text: "Our panels are made with eco-friendly materials, appealing to sustainability-conscious buyers.",
+          },
+        ],
+      },
+      distribution: {
+        section: "distribution",
+        options: [
+          {
+            name: "Direct-to-consumer sales",
+            text: "We sell directly to customers through our website, with options for customizable panels.",
+          },
+          {
+            name: "Retail partnerships",
+            text: "We partner with home improvement and boutique furniture stores to reach a broader audience.",
+          },
+          {
+            name: "E-commerce platforms",
+            text: "Our panels are available on major platforms like Amazon and Wayfair, expanding our online reach.",
+          },
+          {
+            name: "Corporate sales",
+            text: "We provide soundproofing solutions for offices, co-working spaces, and commercial studios.",
+          },
+        ],
+      },
+      traction: {
+        section: "traction",
+        options: [
+          {
+            name: "$100,000 in early sales",
+            text: "We’ve achieved $100,000 in revenue within the first 8 months, demonstrating strong early demand.",
+          },
+          {
+            name: "Highly rated by customers",
+            text: "Over 500 customers have rated us 4.8 stars on average, highlighting both functionality and aesthetics.",
+          },
+          {
+            name: "Featured in media",
+            text: "Our panels have been featured in lifestyle blogs and home improvement magazines as a stylish solution to noisy spaces.",
+          },
+          {
+            name: "Interior design partnerships",
+            text: "We’ve partnered with two major interior design firms to integrate our panels into residential and commercial projects.",
+          },
+        ],
+      },
+      investment: {
+        section: "investment",
+        options: [
+          {
+            name: "Scale production",
+            text: "We need investment to scale manufacturing, ensuring we meet the growing demand for our panels.",
+          },
+          {
+            name: "Expand marketing",
+            text: "We’ll use funds to launch targeted marketing campaigns aimed at urban professionals and interior designers.",
+          },
+        ],
+      },
+      closing: {
+        section: "closing",
+        options: [
+          {
+            name: "Peaceful homes, stylish spaces",
+            text: "Sharks, let’s transform homes into peaceful, stylish spaces together with Soundscape Panels.",
+          },
+          {
+            name: "The art of quiet",
+            text: "Join us in creating the ultimate solution to noise and design challenges—Soundscape Panels.",
+          },
+        ],
+      },
+    },
+    questionsAndAnswers: [
+      {
+        question: "How much does it cost you and how much do you sell it for?",
+        answer:
+          "It costs us $32 to produce each panel, and we sell them for $100-$150 depending on the size and design.",
+      },
+      {
+        question: "How many units have you sold?",
+        answer:
+          "We sold 3,000 panels in our first year and are projecting to double that in year two.",
+      },
+      {
+        question: "How do you differentiate from competitors?",
+        answer:
+          "Our panels combine soundproofing with decorative art, making them both functional and stylish. Additionally, we offer custom designs for a personalized touch.",
+      },
+      {
+        question: "How do you ensure quality control?",
+        answer:
+          "Each panel is locally assembled and tested for soundproofing performance and durability before shipment.",
       },
     ],
   },
