@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <Box>
       <Flex justify="start" align="center" gap="4" mb="4">
-        <img src="./sharktank/icon.png" alt="logo" width={64} height={64} />
+        <img src="../sharktank/icon.png" alt="logo" width={64} height={64} />
         <Heading size="8">Hello, Sharks!</Heading>
       </Flex>
 

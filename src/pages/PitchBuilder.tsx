@@ -162,7 +162,7 @@ export default function PitchBuilder() {
     return (
       <Box>
         <Flex justify="start" align="center" gap="4" mb="4">
-          <img src="./sharktank/icon.png" alt="logo" width={64} height={64} />
+          <img src="../sharktank/icon.png" alt="logo" width={64} height={64} />
           <Heading size="8">Pitch Creator</Heading>
         </Flex>
         <Text size="5" my="4" color="gray">
@@ -205,7 +205,7 @@ export default function PitchBuilder() {
     return (
       <Box>
         <Flex justify="between" align="center" gap="4" mb="4">
-          <img src="./sharktank/icon.png" alt="logo" width={48} height={48} />
+          <img src="../sharktank/icon.png" alt="logo" width={48} height={48} />
           <Progress
             value={((currentSectionIndex + 1) / SECTIONS.length) * 100}
           />
