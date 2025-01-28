@@ -8,8 +8,15 @@ import {
   TextField,
   Button,
   Grid,
+  Badge,
 } from "@radix-ui/themes";
 import { Link } from "react-router-dom";
+
+type Rating = {
+  label: string;
+  color: "green" | "orange" | "red";
+  message: string;
+};
 
 const LABEL_STYLE = { width: "170px" };
 const INPUT_STYLE = { flex: 1, fontSize: "1.25rem" };
@@ -166,7 +173,8 @@ export default function DealBuilder() {
 
   const royaltyAdjustedTargetEquityValue =
     targetEquityValue != null
-      ? Math.max(0, targetEquityValue - (cappedRoyaltyGross ?? 0))
+      ? // ? Math.max(0, targetEquityValue - (cappedRoyaltyGross ?? 0))
+        targetEquityValue
       : null;
 
   const targetValuation =
@@ -184,6 +192,19 @@ export default function DealBuilder() {
       ? Math.max(
           0,
           Math.pow(targetValuation / annualRevenueNum, 1 / INVESTMENT_YEARS) - 1
+        )
+      : null;
+
+  const totalEarnings =
+    royaltyAdjustedTargetEquityValue != null
+      ? royaltyAdjustedTargetEquityValue + (cappedRoyaltyGross ?? 0)
+      : null;
+
+  const equivalentReturnRate =
+    totalEarnings != null && investmentAskNum != null
+      ? Math.max(
+          0,
+          Math.pow(totalEarnings / investmentAskNum, 1 / INVESTMENT_YEARS) - 1
         )
       : null;
 
@@ -276,6 +297,88 @@ export default function DealBuilder() {
       minimumFractionDigits: digits,
     });
   };
+
+  const getReturnRateRating = (rate: string | null): Rating | null => {
+    if (rate == null) return null;
+    const rateNum = parseFloat(rate) / 100;
+    if (isNaN(rateNum)) return null;
+    if (rateNum >= 0.6) {
+      return {
+        label: "Extreme Reward",
+        color: "green",
+        message: `${rate}% annual return over ${INVESTMENT_YEARS} years would be more than 10x your investment.`,
+      };
+    }
+    if (rateNum >= 0.25) {
+      return {
+        label: "High Reward",
+        color: "green",
+        message: `${rate}% annual return over ${INVESTMENT_YEARS} years would be more than triple your investment.`,
+      };
+    }
+    if (rateNum >= 0.15) {
+      return {
+        label: "Medium Reward",
+        color: "orange",
+        message: `${rate}% annual return over ${INVESTMENT_YEARS} years would be more than double your investment.`,
+      };
+    }
+    if (rateNum >= 0.1) {
+      return {
+        label: "Low Reward",
+        color: "red",
+        message: `${rate}% annual return over ${INVESTMENT_YEARS} years is similar to or better than public markets.`,
+      };
+    }
+    return {
+      label: "Poor Reward",
+      color: "red",
+      message: `${rate}% annual return over ${INVESTMENT_YEARS} years is similar to or worse than public markets.`,
+    };
+  };
+
+  const getGrowthRateRating = (rate: string | null): Rating | null => {
+    if (rate == null) return null;
+    const rateNum = parseFloat(rate) / 100;
+    if (isNaN(rateNum)) return null;
+    if (rateNum > 0.75) {
+      return {
+        label: "Extreme Risk",
+        color: "red",
+        message: `${rate}% YoY growth requires high growth startups, excellent execution, and a huge market.`,
+      };
+    }
+    if (rateNum > 0.4) {
+      return {
+        label: "High Risk",
+        color: "red",
+        message: `${rate}% YoY growth is achievable for strong startups in good markets.`,
+      };
+    }
+    if (rateNum > 0.2) {
+      return {
+        label: "Medium Risk",
+        color: "orange",
+        message: `${rate}% YoY growth could come from steady performers in stable markets.`,
+      };
+    }
+    return {
+      label: "Low Risk",
+      color: "green",
+      message: `${rate}% YoY growth is good for competent startups in stable markets.`,
+    };
+  };
+
+  const riskRating = getGrowthRateRating(
+    targetAnnualGrowthRate !== null
+      ? `${(targetAnnualGrowthRate * 100).toFixed(1)}`
+      : "?"
+  );
+  const rewardRating = getReturnRateRating(
+    equivalentReturnRate !== null
+      ? `${(equivalentReturnRate * 100).toFixed(0)}`
+      : "?"
+  );
 
   const clearStoredData = () => {
     localStorage.removeItem("dealBuilder__investmentAsk");
@@ -526,22 +629,12 @@ export default function DealBuilder() {
             </Text>
           </Flex>
           <Flex direction="column" gap="4">
-            {investmentReturnRateNum != null && (
-              <Text as="p" size="5" color="gray">
-                <span>For your money to return </span>
-                <Text as="span" weight="bold">
-                  {investmentReturnRate}%
-                </Text>
-                <span> annually, the company valuation must grow:</span>
-              </Text>
-            )}
-
             <Grid columns="2" gap="1" style={{ textAlign: "center" }}>
               <Box>
-                <Text as="p" size="3" color="gray">
+                <Text as="p" size="4" color="gray">
                   Current Valuation
                 </Text>
-                <Text as="p" size="5" weight="bold">
+                <Text as="p" size="6" weight="bold">
                   {currentValuation != null
                     ? `$${formatNumber(currentValuation)}`
                     : "?"}
@@ -549,10 +642,10 @@ export default function DealBuilder() {
               </Box>
 
               <Box>
-                <Text as="p" size="3" color="gray">
+                <Text as="p" size="4" color="gray">
                   Target Valuation
                 </Text>
-                <Text as="p" size="5" weight="bold">
+                <Text as="p" size="6" weight="bold">
                   {targetValuation != null
                     ? `$${formatNumber(targetValuation)}`
                     : "?"}
@@ -561,49 +654,93 @@ export default function DealBuilder() {
             </Grid>
 
             {annualRevenueNum != null && (
-              <Text as="p" size="5" color="gray">
-                <span>That is</span>
+              <Text as="p" size="5" color="gray" mt="2">
+                <span>This would be </span>
                 <span> </span>
                 <Text as="span" weight="bold">
                   {targetMultiple !== null
                     ? `${targetMultiple.toFixed(1)}x`
                     : "?x"}
                 </Text>
-                <span> current revenue, which would be </span>
+                <span> current revenue, equal to </span>
                 <span> </span>
                 <Text as="span" weight="bold">
                   {targetAnnualGrowthRate !== null
                     ? `${(targetAnnualGrowthRate * 100).toFixed(1)}%`
                     : "?"}
                 </Text>
-                <span> growth each year.</span>
+                <span> year over year growth.</span>
               </Text>
             )}
 
+            <Text as="p" size="5" color="gray" mt="2">
+              <span>Your equity would be worth </span>
+              <Text as="span" weight="bold">
+                ${formatNumber(royaltyAdjustedTargetEquityValue)}
+              </Text>
+              <span> in the event of a sale.</span>
+            </Text>
+
             {royaltyPercentageNum != null && royaltyPercentageNum > 0 && (
-              <Text as="p" size="5" color="gray">
-                <span>You would earn </span>
-                <Text as="span" weight="bold">
-                  ${formatNumber(cappedRoyaltyGross)}
+              <>
+                <Text as="p" size="5" color="gray">
+                  <span>You would earn </span>
+                  <Text as="span" weight="bold">
+                    ${formatNumber(cappedRoyaltyGross)}
+                  </Text>
+                  <span> in royalties</span>
+                  {willRecoup ? (
+                    <>
+                      <span>, which repays your money in </span>
+                      <Text as="span" weight="bold">
+                        {yearsToRecoup} year{yearsToRecoup > 1 ? "s" : ""}.
+                      </Text>
+                    </>
+                  ) : (
+                    <span>.</span>
+                  )}
                 </Text>
-                <span> in royalties, which </span>
-                {willRecoup ? (
+
+                <Text as="p" size="5" color="gray">
+                  <span>For total earnings of </span>
+                  <Text as="span" weight="bold">
+                    ${formatNumber(totalEarnings)}
+                  </Text>
+                  <span>.</span>
+                </Text>
+              </>
+            )}
+
+            <Grid columns="2" gap="4" align="start" mt="4">
+              <Flex direction="column" gap="2">
+                {riskRating && (
                   <>
-                    <span>repays your money in </span>
-                    <Text as="span" weight="bold">
-                      {yearsToRecoup} year{yearsToRecoup > 1 ? "s" : ""}.
+                    <Flex width="100%" justify="center">
+                      <Badge size="3" color={riskRating.color}>
+                        {riskRating.label}
+                      </Badge>
+                    </Flex>
+                    <Text as="p" size="4" color={riskRating.color}>
+                      {riskRating.message}
                     </Text>
-                  </>
-                ) : (
-                  <>
-                    <Text as="span" weight="bold">
-                      does not repay
-                    </Text>
-                    <span> your money.</span>
                   </>
                 )}
-              </Text>
-            )}
+              </Flex>
+              <Flex direction="column" gap="2">
+                {rewardRating && (
+                  <>
+                    <Flex width="100%" justify="center">
+                      <Badge size="3" color={rewardRating.color}>
+                        {rewardRating.label}
+                      </Badge>
+                    </Flex>
+                    <Text as="p" size="4" color={rewardRating.color}>
+                      {rewardRating.message}
+                    </Text>
+                  </>
+                )}
+              </Flex>
+            </Grid>
           </Flex>
         </Card>
       )}
