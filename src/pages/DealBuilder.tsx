@@ -9,6 +9,7 @@ import {
   Button,
   Grid,
   Badge,
+  Dialog,
 } from "@radix-ui/themes";
 import { Link } from "react-router-dom";
 
@@ -21,6 +22,60 @@ type Rating = {
 const LABEL_STYLE = { width: "170px" };
 const INPUT_STYLE = { flex: 1, fontSize: "1.25rem" };
 const MAX_NUMBER = 1_000_000_000_000;
+
+function InfoDialog({
+  trigger,
+  title,
+  description,
+}: {
+  trigger: React.ReactNode;
+  title: React.ReactNode;
+  description: React.ReactNode;
+}) {
+  return (
+    <Dialog.Root>
+      <Dialog.Trigger>{trigger}</Dialog.Trigger>
+      <Dialog.Content style={{ maxWidth: 450 }}>
+        <Dialog.Title size="6">{title}</Dialog.Title>
+        <Dialog.Description size="5" mb="4">
+          {description}
+        </Dialog.Description>
+        <Flex gap="3" justify="end">
+          <Dialog.Close>
+            <Button size="3" variant="soft">
+              Close
+            </Button>
+          </Dialog.Close>
+        </Flex>
+      </Dialog.Content>
+    </Dialog.Root>
+  );
+}
+
+function LabelWithInfo({
+  label,
+  description,
+}: {
+  label: string;
+  description: string;
+}) {
+  return (
+    <InfoDialog
+      trigger={
+        <Text
+          as="p"
+          size="4"
+          weight="medium"
+          style={{ ...LABEL_STYLE, cursor: "pointer" }}
+        >
+          {label}
+        </Text>
+      }
+      title={label}
+      description={description}
+    />
+  );
+}
 
 export default function DealBuilder() {
   // Input state as strings
@@ -417,9 +472,10 @@ export default function DealBuilder() {
         </Heading>
         <Flex direction="column" gap="4">
           <Flex justify="between" align="center" gap="4">
-            <Text as="p" size="4" weight="medium" style={LABEL_STYLE}>
-              Cash Ask
-            </Text>
+            <LabelWithInfo
+              label="Cash Ask"
+              description="Amount of money the investor is asked to fund the company with."
+            />
             <TextField.Root
               size="3"
               type="text"
@@ -436,9 +492,10 @@ export default function DealBuilder() {
           </Flex>
 
           <Flex justify="between" align="center" gap="4">
-            <Text as="p" size="4" weight="medium" style={LABEL_STYLE}>
-              Equity Stake
-            </Text>
+            <LabelWithInfo
+              label="Equity Stake"
+              description="The percentage of company ownership offered in exchange for the investment."
+            />
             <TextField.Root
               size="3"
               type="number"
@@ -455,9 +512,10 @@ export default function DealBuilder() {
           </Flex>
 
           <Flex justify="between" align="center" gap="4">
-            <Text as="p" size="4" weight="medium" style={LABEL_STYLE}>
-              Annual Revenue
-            </Text>
+            <LabelWithInfo
+              label="Annual Revenue"
+              description="Company's current revenue for the last 12 month period."
+            />
             <TextField.Root
               size="3"
               type="text"
@@ -474,9 +532,10 @@ export default function DealBuilder() {
           </Flex>
 
           <Flex justify="between" align="center" gap="4">
-            <Text as="p" size="4" weight="medium" style={LABEL_STYLE}>
-              Target Return Rate
-            </Text>
+            <LabelWithInfo
+              label="Annual Return Rate"
+              description={`The investor's desired return on investment, expressed as percentage growth from the initial investment, compounded annually over ${INVESTMENT_YEARS} years.`}
+            />
             <TextField.Root
               size="3"
               type="number"
@@ -499,9 +558,10 @@ export default function DealBuilder() {
           </Heading>
           <Flex direction="column" gap="4">
             <Flex justify="between" align="center" gap="4">
-              <Text as="p" size="4" weight="medium" style={LABEL_STYLE}>
-                Percentage
-              </Text>
+              <LabelWithInfo
+                label="Percentage"
+                description="Percentage of annual revenue paid to the investor as royalties."
+              />
               <Flex gap="2" style={{ flex: 1 }} align="center">
                 <TextField.Root
                   size="3"
@@ -530,9 +590,10 @@ export default function DealBuilder() {
 
             {showRoyaltyYears ? (
               <Flex justify="between" align="center" gap="4">
-                <Text as="p" size="4" weight="medium" style={LABEL_STYLE}>
-                  Max Years
-                </Text>
+                <LabelWithInfo
+                  label="Max Years"
+                  description="Maximum number of years the royalty payments will continue. After this period, royalty payments stop regardless of the total amount paid."
+                />
                 <Flex gap="2" style={{ flex: 1 }} align="center">
                   <TextField.Root
                     size="3"
@@ -568,9 +629,10 @@ export default function DealBuilder() {
 
             {showRoyaltyMaximum ? (
               <Flex justify="between" align="center" gap="4">
-                <Text as="p" size="4" weight="medium" style={LABEL_STYLE}>
-                  Max Amount
-                </Text>
+                <LabelWithInfo
+                  label="Max Amount"
+                  description="Maximum total amount to be paid in royalties. Once this amount is reached, royalty payments stop regardless of the time period."
+                />
                 <Flex gap="2" style={{ flex: 1 }} align="center">
                   <TextField.Root
                     size="3"
@@ -621,7 +683,7 @@ export default function DealBuilder() {
       )}
 
       {investmentAskNum != null && equityPercentageNum != null && (
-        <Card size="2" mb="4">
+        <Card size="2" mb="6">
           <Flex justify="between" align="end" gap="4" mb="4">
             <Heading size="5">Deal Analysis</Heading>
             <Text as="p" size="3" color="gray">
@@ -630,27 +692,59 @@ export default function DealBuilder() {
           </Flex>
           <Flex direction="column" gap="4">
             <Grid columns="2" gap="1" style={{ textAlign: "center" }}>
-              <Box>
-                <Text as="p" size="4" color="gray">
-                  Current Valuation
-                </Text>
-                <Text as="p" size="6" weight="bold">
-                  {currentValuation != null
-                    ? `$${formatNumber(currentValuation)}`
-                    : "?"}
-                </Text>
-              </Box>
+              <InfoDialog
+                trigger={
+                  <Box style={{ cursor: "pointer" }}>
+                    <Text as="p" size="4" color="gray">
+                      Current Valuation
+                    </Text>
+                    <Text as="p" size="6" weight="bold">
+                      {currentValuation != null
+                        ? `$${formatNumber(currentValuation)}`
+                        : "?"}
+                    </Text>
+                  </Box>
+                }
+                title="Current Valuation"
+                description={
+                  <Box>
+                    <Text as="p" size="4" my="2">
+                      This is the implied value of the entire company based on
+                      the investment terms.
+                    </Text>
+                    <Text as="p" size="4" my="2">
+                      Here is the formula:
+                    </Text>
+                    <Text as="p" size="4" my="2">
+                      Valuation = Investment / Equity %
+                    </Text>
+                    <Text as="p" size="4" my="2">
+                      Valuation = ${formatNumber(investmentAskNum)} /{" "}
+                      {equityPercentageNum}%
+                    </Text>
+                    <Text as="p" size="4" my="2">
+                      Valuation = ${formatNumber(currentValuation)}
+                    </Text>
+                  </Box>
+                }
+              />
 
-              <Box>
-                <Text as="p" size="4" color="gray">
-                  Target Valuation
-                </Text>
-                <Text as="p" size="6" weight="bold">
-                  {targetValuation != null
-                    ? `$${formatNumber(targetValuation)}`
-                    : "?"}
-                </Text>
-              </Box>
+              <InfoDialog
+                trigger={
+                  <Box style={{ cursor: "pointer" }}>
+                    <Text as="p" size="4" color="gray">
+                      Target Valuation
+                    </Text>
+                    <Text as="p" size="6" weight="bold">
+                      {targetValuation != null
+                        ? `$${formatNumber(targetValuation)}`
+                        : "?"}
+                    </Text>
+                  </Box>
+                }
+                title="Target Valuation"
+                description={`This is the value the company needs to reach in ${INVESTMENT_YEARS} years for the investor to achieve their desired return rate of ${investmentReturnRate}% per year. It represents the minimum exit value needed to meet the investment goals.`}
+              />
             </Grid>
 
             {annualRevenueNum != null && (
