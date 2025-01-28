@@ -213,6 +213,7 @@ export default function DealBuilder() {
             <TextField.Root
               size="3"
               type="text"
+              inputMode="numeric"
               value={formatInputNumber(investmentAsk)}
               onChange={(e) =>
                 handleNumberInput(e.target.value, setInvestmentAsk)
@@ -249,6 +250,7 @@ export default function DealBuilder() {
             <TextField.Root
               size="3"
               type="text"
+              inputMode="numeric"
               value={formatInputNumber(annualRevenue)}
               onChange={(e) =>
                 handleNumberInput(e.target.value, setAnnualRevenue)
@@ -361,6 +363,7 @@ export default function DealBuilder() {
                   <TextField.Root
                     size="3"
                     type="text"
+                    inputMode="numeric"
                     value={formatInputNumber(royaltyMaximum)}
                     onChange={(e) =>
                       handleNumberInput(e.target.value, setRoyaltyMaximum)
