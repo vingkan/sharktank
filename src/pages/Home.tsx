@@ -32,6 +32,18 @@ export default function Home() {
             </Text>
           </Card>
         </Link>
+
+        <Link to="/deal" style={{ textDecoration: "none", color: "black" }}>
+          <Card size="2" style={{ cursor: "pointer" }}>
+            <Heading size="7" mb="2">
+              Deals
+            </Heading>
+            <Text as="p" size="5">
+              Enter details from a pitch and find out if the investment is a
+              good deal.
+            </Text>
+          </Card>
+        </Link>
       </Flex>
     </Box>
   );

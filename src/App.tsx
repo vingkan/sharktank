@@ -1,19 +1,52 @@
+import { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { BASENAME, useStaticRedirect } from "./utils/redirect";
 import { Layout } from "./components/Layout";
-import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
-import PitchBuilder from "./pages/PitchBuilder";
-import BioBuilder from "./pages/BioBuilder";
+
+// Lazy load page components
+const HomePage = lazy(() => import("./pages/Home"));
+const PitchBuilderPage = lazy(() => import("./pages/PitchBuilder"));
+const BioBuilderPage = lazy(() => import("./pages/BioBuilder"));
+const DealBuilderPage = lazy(() => import("./pages/DealBuilder"));
 
 function AppPage() {
   useStaticRedirect();
 
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/pitch" element={<PitchBuilder />} />
-      <Route path="/bio" element={<BioBuilder />} />
+      <Route
+        path="/"
+        element={
+          <Suspense fallback={<div>Loading...</div>}>
+            <HomePage />
+          </Suspense>
+        }
+      />
+      <Route
+        path="/pitch"
+        element={
+          <Suspense fallback={<div>Loading...</div>}>
+            <PitchBuilderPage />
+          </Suspense>
+        }
+      />
+      <Route
+        path="/bio"
+        element={
+          <Suspense fallback={<div>Loading...</div>}>
+            <BioBuilderPage />
+          </Suspense>
+        }
+      />
+      <Route
+        path="/deal"
+        element={
+          <Suspense fallback={<div>Loading...</div>}>
+            <DealBuilderPage />
+          </Suspense>
+        }
+      />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
