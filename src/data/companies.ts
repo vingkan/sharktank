@@ -174,6 +174,10 @@ export const COMPANIES: Company[] = [
         answer: "It costs us $2 per can and we sell it for $4 per can.",
       },
       {
+        question: "What is your profit margin?",
+        answer: "We make $2 per can, so our profit margin is 50%.",
+      },
+      {
         question: "How many units have you sold?",
         answer:
           "We sold 37,500 cans in our first year and we are projecting to quadruple that this year.",
@@ -360,6 +364,10 @@ export const COMPANIES: Company[] = [
           "It costs us $10 to produce each kit, and we sell them for $50 each.",
       },
       {
+        question: "What is your profit margin?",
+        answer: "On average, we make $40 per kit, so our profit margin is 80%.",
+      },
+      {
         question: "How many units have you sold?",
         answer:
           "We sold 5,000 kits in our first year and are on track to double that this year.",
@@ -544,6 +552,10 @@ export const COMPANIES: Company[] = [
           "Our kits cost $5-$6 to produce, and we sell them for $15-$20 depending on the size of the event.",
       },
       {
+        question: "What is your profit margin?",
+        answer: "On average, we make $9 per kit, so our profit margin is 60%.",
+      },
+      {
         question: "What kind of events have you worked with so far?",
         answer:
           "We've worked with music festivals, marathons, and local fairs, and we're looking to expand into corporate events and weddings.",
@@ -716,6 +728,11 @@ export const COMPANIES: Company[] = [
         question: "How much does it cost you and how much do you sell it for?",
         answer:
           "The cost to produce each unit is $200, $100 for the LED screen, $50 for the GPS/Wi-Fi module, and $50 for the mount. We make that cost back within 10 months, unless the driver buys the unit, at which point we make back almost four times the cost. We take a 25% cut of the ad revenue, and could make that even higher.",
+      },
+      {
+        question: "What is your profit margin?",
+        answer:
+          "We keep 25% of ad revenue and most drivers lease their units which helps us recoup the cost and our software costs scale well, so our aggregate margin will get even better over time.",
       },
       {
         question: "How do drivers earn money?",
@@ -914,6 +931,11 @@ export const COMPANIES: Company[] = [
           "It costs us $17-$27 per garment to produce, and we sell them for $50-$100 depending on the type of clothing.",
       },
       {
+        question: "What is your profit margin?",
+        answer:
+          "We make anywhere from $33 to $73 per garment, so our profit margin is roughly 60-70%.",
+      },
+      {
         question: "Who is your biggest competitor?",
         answer:
           "Our biggest competitors are brands like Tommy Hilfiger's adaptive clothing line. However, we focus more on affordability and inclusive styles, making our products accessible to a broader audience.",
@@ -1090,6 +1112,11 @@ export const COMPANIES: Company[] = [
         question: "How much does it cost you and how much do you sell it for?",
         answer:
           "Our luxury gifts cost $60-$120 to produce, and we sell them for $80-$500 depending on the category and personalization.",
+      },
+      {
+        question: "What is your profit margin?",
+        answer:
+          "Margin varies by gift type, for example we make just 25% margin on spa kits, but over 70% margin on jewelry. Average margin is closer to 30%.",
       },
       {
         question: "How do you have such a large inventory?",
@@ -1273,6 +1300,11 @@ export const COMPANIES: Company[] = [
         question: "How much does it cost you and how much do you sell it for?",
         answer:
           "It costs us $32 to produce each panel, and we sell them for $100-$150 depending on the size and design.",
+      },
+      {
+        question: "What is your profit margin?",
+        answer:
+          "We make anywhere from $68 to $130 per panel, for an average margin of 70%.",
       },
       {
         question: "How many units have you sold?",
@@ -1460,6 +1492,11 @@ export const COMPANIES: Company[] = [
         question: "How much does it cost you and how much do you sell it for?",
         answer:
           "It costs us $38 per unit to produce, and we sell them for $120 per unit. Bulk orders for fleets start at $90 per unit.",
+      },
+      {
+        question: "What is your profit margin?",
+        answer:
+          "We have a 68% margin on each unit we produce. Bulk pricing eats into this a bit, but long-run it will make our production cheaper so both margin and scale will improve.",
       },
       {
         question: "Who are your competitors?",
