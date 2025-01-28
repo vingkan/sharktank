@@ -549,67 +549,87 @@ export default function PitchBuilder() {
 
     return (
       <Box>
-        <Flex justify="between" align="center" mb="4">
+        <Flex justify="between" align="center" gap="4" mb="4">
+          <Link to="/">
+            <img
+              src="../sharktank/icon.png"
+              alt="logo"
+              width={48}
+              height={48}
+            />
+          </Link>
+          <Progress value={100} />
+          <Text size="4" color="gray">
+            Complete
+          </Text>
+        </Flex>
+
+        <Flex justify="between" align="center" mb="6">
           <Button
-            size="3"
+            size="4"
             variant="ghost"
             onClick={() => setCurrentStep("build")}
+            style={{ width: "100px" }}
           >
             Back
           </Button>
-          <Link to="/">
-            <Button variant="ghost" size="3">
-              Home
+          <Link to="/deal">
+            <Button variant="ghost" size="4" style={{ width: "100px" }}>
+              Deals
             </Button>
           </Link>
           <Button
-            size="3"
+            size="4"
             variant="ghost"
             color="red"
             onClick={handleStartOver}
+            style={{ width: "100px" }}
           >
             Start Over
           </Button>
         </Flex>
+        <Card size="2" mb="4">
+          <Heading size="8" mb="4">
+            {selectedCompany.company.name}
+          </Heading>
 
-        <Heading size="8" mb="4">
-          {selectedCompany.company.name}
-        </Heading>
-
-        <Flex justify="between" mb="4" align="center">
-          <Heading size="7">Pitch</Heading>
-          <Button
-            size="4"
-            variant="soft"
-            onClick={() => {
-              setIsPresentationMode(true);
-              setCurrentLineIndex(0);
-            }}
-          >
-            Present
-          </Button>
-        </Flex>
-        <Box mb="6">
-          {fullPitch.map((paragraph, index) => (
-            <Text as="p" size="5" mb="4" key={index}>
-              {paragraph}
-            </Text>
-          ))}
-        </Box>
-
-        <Heading size="7" mb="4">
-          Q&A
-        </Heading>
-        {selectedCompany.questionsAndAnswers.map((qa, index) => (
-          <Box key={index} mb="4">
-            <Text as="p" size="5" weight="bold" mb="2">
-              {qa.question}
-            </Text>
-            <Text as="p" size="5">
-              {qa.answer}
-            </Text>
+          <Flex justify="between" mb="4" align="center">
+            <Heading size="7">Pitch</Heading>
+            <Button
+              size="4"
+              variant="soft"
+              onClick={() => {
+                setIsPresentationMode(true);
+                setCurrentLineIndex(0);
+              }}
+            >
+              Present
+            </Button>
+          </Flex>
+          <Box mb="6">
+            {fullPitch.map((paragraph, index) => (
+              <Text as="p" size="5" mb="4" key={index}>
+                {paragraph}
+              </Text>
+            ))}
           </Box>
-        ))}
+        </Card>
+
+        <Card>
+          <Heading size="7" mb="4">
+            Q&A
+          </Heading>
+          {selectedCompany.questionsAndAnswers.map((qa, index) => (
+            <Box key={index} mb="4">
+              <Text as="p" size="5" weight="bold" mb="2">
+                {qa.question}
+              </Text>
+              <Text as="p" size="5">
+                {qa.answer}
+              </Text>
+            </Box>
+          ))}
+        </Card>
       </Box>
     );
   }

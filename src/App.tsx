@@ -9,6 +9,7 @@ const HomePage = lazy(() => import("./pages/Home"));
 const PitchBuilderPage = lazy(() => import("./pages/PitchBuilder"));
 const BioBuilderPage = lazy(() => import("./pages/BioBuilder"));
 const DealBuilderPage = lazy(() => import("./pages/DealBuilder"));
+const OldBioBuilderPage = lazy(() => import("./pages/OldBioBuilder"));
 
 function AppPage() {
   useStaticRedirect();
@@ -44,6 +45,14 @@ function AppPage() {
         element={
           <Suspense fallback={<div>Loading...</div>}>
             <DealBuilderPage />
+          </Suspense>
+        }
+      />
+      <Route
+        path="/oldbio"
+        element={
+          <Suspense fallback={<div>Loading...</div>}>
+            <OldBioBuilderPage />
           </Suspense>
         }
       />

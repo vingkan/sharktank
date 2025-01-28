@@ -745,13 +745,23 @@ export default function DealBuilder() {
         </Card>
       )}
 
-      <Flex justify="center" my="4">
+      <Flex justify="between" my="4">
+        <Link to="/pitch">
+          <Button size="4" variant="ghost" style={{ width: "110px" }}>
+            Back to Pitch
+          </Button>
+        </Link>
         <Button size="4" variant="ghost" color="red" onClick={startOver}>
           Start Over
         </Button>
+        <Link to="/bio">
+          <Button size="4" variant="ghost" style={{ width: "110px" }}>
+            Back to Bio
+          </Button>
+        </Link>
       </Flex>
 
-      <Text as="p" size="3" color="gray" mt="4" style={{ textAlign: "center" }}>
+      <Text as="p" size="3" color="gray" mt="6" style={{ textAlign: "center" }}>
         This is just a silly game and not financial advice.
       </Text>
     </Box>
