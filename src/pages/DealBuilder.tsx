@@ -214,6 +214,7 @@ export default function DealBuilder() {
               size="3"
               type="text"
               inputMode="numeric"
+              pattern="\d*"
               value={formatInputNumber(investmentAsk)}
               onChange={(e) =>
                 handleNumberInput(e.target.value, setInvestmentAsk)
@@ -251,6 +252,7 @@ export default function DealBuilder() {
               size="3"
               type="text"
               inputMode="numeric"
+              pattern="\d*"
               value={formatInputNumber(annualRevenue)}
               onChange={(e) =>
                 handleNumberInput(e.target.value, setAnnualRevenue)
@@ -364,6 +366,7 @@ export default function DealBuilder() {
                     size="3"
                     type="text"
                     inputMode="numeric"
+                    pattern="\d*"
                     value={formatInputNumber(royaltyMaximum)}
                     onChange={(e) =>
                       handleNumberInput(e.target.value, setRoyaltyMaximum)
