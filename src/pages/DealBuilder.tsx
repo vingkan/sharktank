@@ -694,53 +694,53 @@ export default function DealBuilder() {
             <Grid columns="2" gap="1" style={{ textAlign: "center" }}>
               <InfoDialog
                 trigger={
-                  <Box style={{ cursor: "pointer" }}>
-                    <Text as="p" size="4" color="gray">
+                  <Flex direction="column" style={{ cursor: "pointer" }}>
+                    <Text size="4" color="gray">
                       Current Valuation
                     </Text>
-                    <Text as="p" size="6" weight="bold">
+                    <Text size="6" weight="bold">
                       {currentValuation != null
                         ? `$${formatNumber(currentValuation)}`
                         : "?"}
                     </Text>
-                  </Box>
+                  </Flex>
                 }
                 title="Current Valuation"
                 description={
-                  <Box>
-                    <Text as="p" size="4" my="2">
+                  <>
+                    <Text size="4">
                       This is the implied value of the entire company based on
                       the investment terms.
                     </Text>
-                    <Text as="p" size="4" my="2">
-                      Here is the formula:
-                    </Text>
-                    <Text as="p" size="4" my="2">
-                      Valuation = Investment / Equity %
-                    </Text>
-                    <Text as="p" size="4" my="2">
+                    <br />
+                    <Text size="4">Here is the formula:</Text>
+                    <br />
+                    <Text size="4">Valuation = Investment / Equity %</Text>
+                    <br />
+                    <Text size="4">
                       Valuation = ${formatNumber(investmentAskNum)} /{" "}
                       {equityPercentageNum}%
                     </Text>
-                    <Text as="p" size="4" my="2">
+                    <br />
+                    <Text size="4">
                       Valuation = ${formatNumber(currentValuation)}
                     </Text>
-                  </Box>
+                  </>
                 }
               />
 
               <InfoDialog
                 trigger={
-                  <Box style={{ cursor: "pointer" }}>
-                    <Text as="p" size="4" color="gray">
+                  <Flex direction="column" style={{ cursor: "pointer" }}>
+                    <Text size="4" color="gray">
                       Target Valuation
                     </Text>
-                    <Text as="p" size="6" weight="bold">
+                    <Text size="6" weight="bold">
                       {targetValuation != null
                         ? `$${formatNumber(targetValuation)}`
                         : "?"}
                     </Text>
-                  </Box>
+                  </Flex>
                 }
                 title="Target Valuation"
                 description={`This is the value the company needs to reach in ${INVESTMENT_YEARS} years for the investor to achieve their desired return rate of ${investmentReturnRate}% per year. It represents the minimum exit value needed to meet the investment goals.`}
