@@ -372,7 +372,7 @@ export default function DealBuilder() {
 
           <Flex justify="between" align="center" gap="4">
             <Text as="p" size="4" weight="medium" style={LABEL_STYLE}>
-              Target Growth Rate
+              Target Return Rate
             </Text>
             <TextField.Root
               size="3"
@@ -528,7 +528,7 @@ export default function DealBuilder() {
           <Flex direction="column" gap="4">
             {investmentReturnRateNum != null && (
               <Text as="p" size="5" color="gray">
-                <span>For your money to grow </span>
+                <span>For your money to return </span>
                 <Text as="span" weight="bold">
                   {investmentReturnRate}%
                 </Text>
