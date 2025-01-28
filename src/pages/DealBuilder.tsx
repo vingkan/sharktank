@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Box,
   Card,
@@ -17,23 +17,100 @@ const MAX_NUMBER = 1_000_000_000_000;
 
 export default function DealBuilder() {
   // Input state as strings
-  const [investmentAsk, setInvestmentAsk] = useState<string>("");
-  const [equityPercentage, setEquityPercentage] = useState<string>("");
-  const [annualRevenue, setAnnualRevenue] = useState<string>("");
-  const [investmentReturnRate, setInvestmentReturnRate] = useState<string>("");
+  const [investmentAsk, setInvestmentAsk] = useState<string>(() => {
+    return localStorage.getItem("dealBuilder__investmentAsk") || "";
+  });
+  const [equityPercentage, setEquityPercentage] = useState<string>(() => {
+    return localStorage.getItem("dealBuilder__equityPercentage") || "";
+  });
+  const [annualRevenue, setAnnualRevenue] = useState<string>(() => {
+    return localStorage.getItem("dealBuilder__annualRevenue") || "";
+  });
+  const [investmentReturnRate, setInvestmentReturnRate] = useState<string>(
+    () => {
+      return localStorage.getItem("dealBuilder__investmentReturnRate") || "";
+    }
+  );
 
   // Optional royalty inputs
-  const [royaltyPercentage, setRoyaltyPercentage] = useState<string>("");
-  const [royaltyYears, setRoyaltyYears] = useState<string>("");
-  const [royaltyMaximum, setRoyaltyMaximum] = useState<string>("");
+  const [royaltyPercentage, setRoyaltyPercentage] = useState<string>(() => {
+    return localStorage.getItem("dealBuilder__royaltyPercentage") || "";
+  });
+  const [royaltyYears, setRoyaltyYears] = useState<string>(() => {
+    return localStorage.getItem("dealBuilder__royaltyYears") || "";
+  });
+  const [royaltyMaximum, setRoyaltyMaximum] = useState<string>(() => {
+    return localStorage.getItem("dealBuilder__royaltyMaximum") || "";
+  });
 
   // UI state
-  const [showRoyalties, setShowRoyalties] = useState<boolean>(false);
-  const [showRoyaltyYears, setShowRoyaltyYears] = useState<boolean>(false);
-  const [showRoyaltyMaximum, setShowRoyaltyMaximum] = useState<boolean>(false);
+  const [showRoyalties, setShowRoyalties] = useState<boolean>(() => {
+    return localStorage.getItem("dealBuilder__showRoyalties") === "true";
+  });
+  const [showRoyaltyYears, setShowRoyaltyYears] = useState<boolean>(() => {
+    return localStorage.getItem("dealBuilder__showRoyaltyYears") === "true";
+  });
+  const [showRoyaltyMaximum, setShowRoyaltyMaximum] = useState<boolean>(() => {
+    return localStorage.getItem("dealBuilder__showRoyaltyMaximum") === "true";
+  });
 
   // Constants
   const INVESTMENT_YEARS = 5;
+
+  // Persist input values
+  useEffect(() => {
+    localStorage.setItem("dealBuilder__investmentAsk", investmentAsk);
+  }, [investmentAsk]);
+
+  useEffect(() => {
+    localStorage.setItem("dealBuilder__equityPercentage", equityPercentage);
+  }, [equityPercentage]);
+
+  useEffect(() => {
+    localStorage.setItem("dealBuilder__annualRevenue", annualRevenue);
+  }, [annualRevenue]);
+
+  useEffect(() => {
+    localStorage.setItem(
+      "dealBuilder__investmentReturnRate",
+      investmentReturnRate
+    );
+  }, [investmentReturnRate]);
+
+  // Persist royalty values
+  useEffect(() => {
+    localStorage.setItem("dealBuilder__royaltyPercentage", royaltyPercentage);
+  }, [royaltyPercentage]);
+
+  useEffect(() => {
+    localStorage.setItem("dealBuilder__royaltyYears", royaltyYears);
+  }, [royaltyYears]);
+
+  useEffect(() => {
+    localStorage.setItem("dealBuilder__royaltyMaximum", royaltyMaximum);
+  }, [royaltyMaximum]);
+
+  // Persist UI state
+  useEffect(() => {
+    localStorage.setItem(
+      "dealBuilder__showRoyalties",
+      showRoyalties.toString()
+    );
+  }, [showRoyalties]);
+
+  useEffect(() => {
+    localStorage.setItem(
+      "dealBuilder__showRoyaltyYears",
+      showRoyaltyYears.toString()
+    );
+  }, [showRoyaltyYears]);
+
+  useEffect(() => {
+    localStorage.setItem(
+      "dealBuilder__showRoyaltyMaximum",
+      showRoyaltyMaximum.toString()
+    );
+  }, [showRoyaltyMaximum]);
 
   // Parse numeric values
   const parseNumber = (value: string, allowZero = false): number | null => {
@@ -137,6 +214,14 @@ export default function DealBuilder() {
     setRoyaltyPercentage("");
     setRoyaltyYears("");
     setRoyaltyMaximum("");
+
+    // Clear localStorage for royalty fields
+    localStorage.removeItem("dealBuilder__royaltyPercentage");
+    localStorage.removeItem("dealBuilder__royaltyYears");
+    localStorage.removeItem("dealBuilder__royaltyMaximum");
+    localStorage.removeItem("dealBuilder__showRoyalties");
+    localStorage.removeItem("dealBuilder__showRoyaltyYears");
+    localStorage.removeItem("dealBuilder__showRoyaltyMaximum");
   };
 
   // Handlers for individual inputs
@@ -190,6 +275,28 @@ export default function DealBuilder() {
       maximumFractionDigits: digits,
       minimumFractionDigits: digits,
     });
+  };
+
+  const clearStoredData = () => {
+    localStorage.removeItem("dealBuilder__investmentAsk");
+    localStorage.removeItem("dealBuilder__equityPercentage");
+    localStorage.removeItem("dealBuilder__annualRevenue");
+    localStorage.removeItem("dealBuilder__investmentReturnRate");
+    localStorage.removeItem("dealBuilder__royaltyPercentage");
+    localStorage.removeItem("dealBuilder__royaltyYears");
+    localStorage.removeItem("dealBuilder__royaltyMaximum");
+    localStorage.removeItem("dealBuilder__showRoyalties");
+    localStorage.removeItem("dealBuilder__showRoyaltyYears");
+    localStorage.removeItem("dealBuilder__showRoyaltyMaximum");
+  };
+
+  const startOver = () => {
+    clearStoredData();
+    setInvestmentAsk("");
+    setEquityPercentage("");
+    setAnnualRevenue("");
+    setInvestmentReturnRate("");
+    hideRoyalties();
   };
 
   return (
@@ -501,7 +608,13 @@ export default function DealBuilder() {
         </Card>
       )}
 
-      <Text as="p" size="3" color="gray" style={{ textAlign: "center" }}>
+      <Flex justify="center" my="4">
+        <Button size="4" variant="ghost" color="red" onClick={startOver}>
+          Start Over
+        </Button>
+      </Flex>
+
+      <Text as="p" size="3" color="gray" mt="4" style={{ textAlign: "center" }}>
         This is just a silly game and not financial advice.
       </Text>
     </Box>
